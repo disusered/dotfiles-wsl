@@ -1,0 +1,15 @@
+  path=(
+    # Node version management
+    $VOLTA_HOME/bin
+    # Local paths
+    $home/.local/bin
+    # Inherit PATH
+    $path
+  )
+
+  # Add to ZSH function paths
+  fpath=(
+    "${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/completions"
+    "${HOME}/.zsh/completions"
+    $fpath
+  )

@@ -1,0 +1,108 @@
+#!/bin/bash
+
+TIMEZONE="America/Tijuana"
+LOCALE="en_US.UTF-8"
+
+# Logging function
+log() {
+  echo -e "\033[1;32m[+]\033[0m $1"
+}
+
+# Set timezone to America/Tijuana if not already set
+CURRENT_TZ=$(timedatectl | grep 'Time zone' | awk '{print $3}')
+if [ "$CURRENT_TZ" != "$TIMEZONE" ]; then
+  log "Setting timezone to $TIMEZONE"
+  sudo timedatectl set-timezone "$TIMEZONE"
+else
+  log "Timezone is already set to $TIMEZONE"
+fi
+
+# Set system locale to en_US.UTF-8 if not already set
+log "Checking system locale..."
+if ! grep -q "LANG=$LOCALE" /etc/default/locale || ! locale -a | grep -q "${LOCALE_NAME:-${LOCALE%.*}}"; then
+  log "Generating and setting locale to $LOCALE."
+  sudo locale-gen $LOCALE
+  sudo update-locale LANG=$LOCALE
+else
+  log "Locale is already set to $LOCALE."
+fi
+
+# Update and install packages
+sudo apt-get update &&
+  sudo apt-get upgrade &&
+  sudo apt-get install software-properties-common
+
+cd "$HOME/.dotfiles"
+xargs -a $HOME/.dotfiles/packages.txt sudo apt-get install -y
+log "Installed packages from packages.txt"
+
+# Latex
+sudo snap install tectonic
+
+# Tmux Plugin Manager
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+  log "Installing Tmux Plugin Manager"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+  log "Tmux Plugin Manager already installed"
+fi
+
+# Rust
+if ! command -v cargo &>/dev/null; then
+  log "Installing Rust and Tree-sitter CLI 🦀"
+  curl https://sh.rustup.rs -sSf | sh -s -- -y
+else
+  log "Rust is already installed."
+fi
+
+# Deno
+if ! command -v deno &>/dev/null; then
+  log "Installing Deno"
+  curl -fsSL https://deno.land/install.sh | sh
+else
+  log "Deno already installed"
+fi
+
+# Volta (Node.js version manager)
+if ! command -v volta &>/dev/null; then
+  log "Installing Volta and the default Node.js version"
+  curl https://get.volta.sh | bash
+else
+  log "Volta is already installed"
+fi
+
+# RBenv (Ruby version manager)
+if ! command -v rbenv &>/dev/null; then
+  log "Installing RBenv and Ruby"
+  curl -fsSL https://rbenv.org/install.sh | bash
+else
+  log "RBenv is already installed"
+fi
+
+# Chrome on Linux
+if ! command -v google-chrome &>/dev/null; then
+  log "Installing Google Chrome"
+  wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+  sudo apt-get update && sudo apt-get install google-chrome-stable
+else
+  log "Google Chrome is already installed"
+fi
+
+# Configure symlinks to configs
+log "Symlinking dotfiles with Stow"
+# TODO: git, btop, ncdu, lazygit, pip, mcphub
+stow -d $HOME/.dotfiles/confs -t $HOME -R neovim tmux zsh bat aider
+
+# Set up bat theme cache
+batcat cache --build
+
+# Set ZSH as default shell if not already set
+if [[ "$SHELL" != "/usr/bin/zsh" ]]; then
+  log "Setting ZSH as default shell. You may need to log out and back in for this to take full effect."
+  chsh -s '/usr/bin/zsh'
+fi
+
+# Neovim dependencies
+source "$HOME/.cargo/env"
+cargo install --locked tree-sitter-cli
