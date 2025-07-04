@@ -30,7 +30,25 @@ fi
 # Update and install packages
 sudo apt-get update &&
   sudo apt-get upgrade &&
-  sudo apt-get install software-properties-common
+  sudo apt-get install software-properties-common ca-certificates gnupg
+
+# Dotnet
+if ! command -v dotnet &>/dev/null; then
+  sudo add-apt-repository ppa:dotnet/backports -y
+  log "Added .NET apt repository"
+else
+  log ".NET is already installed"
+fi
+
+# Nuget
+if [ ! -f /usr/local/bin/nuget.exe ]; then
+  sudo curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+  sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+  echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+  log "Installed NuGet and Mono repository"
+else
+  log "NuGet and Mono repositories are already installed"
+fi
 
 cd "$HOME/.dotfiles"
 xargs -a $HOME/.dotfiles/packages.txt sudo apt-get install -y
@@ -79,7 +97,7 @@ else
   log "RBenv is already installed"
 fi
 
-# Chrome on Linux
+# Chrome on Linux (for Markdown preview)
 if ! command -v google-chrome &>/dev/null; then
   log "Installing Google Chrome"
   wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -

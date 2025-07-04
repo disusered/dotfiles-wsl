@@ -27,3 +27,6 @@ zlib1g-dev
 libyaml-dev
 imagemagick
 zathura
+dotnet-sdk-9.0
+aspnetcore-runtime-9.0
+mono-devel

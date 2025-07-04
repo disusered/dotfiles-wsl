@@ -40,7 +40,6 @@ alias gf='git fetch'
 alias gfm='git pull'
 alias gr='git reset'
 alias gco='git checkout'
-alias op='op.exe'
 
 
 # Debug colors in tmux
@@ -54,3 +53,7 @@ alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=sta
 alias ai='aider --api-key gemini=`op read op://Odasoft/Gemini\ API\ Key/credential` --model gemini-2.5-pro'
 # alias coder='aider --api-key openai=`op.exe read op://Prescrypto/OpenAI\ Token/key`'
 # alias reason='aider --api-key openai=`op.exe read op://Prescrypto/OpenAI\ Token/key` --model o3-mini --reasoning-effort high'
+
+# Windows Subsystem for Linux (WSL) aliases
+alias nuget="mono /usr/local/bin/nuget.exe"
+alias op='op.exe'

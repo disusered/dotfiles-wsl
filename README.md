@@ -34,3 +34,10 @@
   # to the allowed_signers file in the required format.
   echo "$(git config --global user.email) $(cat ~/.ssh/id_ed25519.pub)" > ~/.ssh/allowed_signers
   ```
+
+
+# TODO:
+
+- Document scoop packages
+  - Nuget
+  - ???

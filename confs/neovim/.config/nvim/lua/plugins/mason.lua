@@ -13,7 +13,7 @@ return {
         "astro-language-server",
         "sqlfluff",
         "elixir-ls",
-        -- "omnisharp",
+        "omnisharp",
         "hadolint",
         "checkmake",
         "emmet-language-server",
