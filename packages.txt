@@ -25,3 +25,5 @@ libssl-dev
 libreadline-dev
 zlib1g-dev
 libyaml-dev
+imagemagick
+zathura
