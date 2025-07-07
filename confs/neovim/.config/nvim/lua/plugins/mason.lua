@@ -20,7 +20,6 @@ return {
         "js-debug-adapter",
         "flake8",
         "pyright",
-        "ruff-lsp",
         "ruff",
         "isort",
         "black",
