@@ -16,6 +16,7 @@ return {
         "astro",
         "sql",
         "rust",
+        "ruby",
         "c_sharp",
         "json",
         "jsonc",
