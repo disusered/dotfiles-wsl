@@ -5,7 +5,7 @@ return {
       "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
     },
     cmd = "MCPHub", -- lazy load by default
-    build = "bundled_build.lua", -- Use the bundled build script rather than a global npm install
+    build = "npm install -g mcp-hub@latest", -- Installs `mcp-hub` node binary globally
     use_bundled_binary = true,
     auto_approve = true, -- Automatically approve the call of the MCP server
     opts = {
