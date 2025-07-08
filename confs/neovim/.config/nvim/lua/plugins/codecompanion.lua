@@ -7,11 +7,19 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "ravitemer/mcphub.nvim",
     },
-    keys = {
-      { "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle Chat (CodeCompanion)" },
-      { "<leader>aq", "<cmd>CodeCompanion<cr>", desc = "Quick Chat (CodeCompanion)" },
-      { "<leader>ap", "<cmd>CodeCompanionActions<cr>", desc = "Prompt Actions (CodeCompanion)" },
-    },
+
+    keys = function()
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>a", group = "ai" }, -- group
+      })
+      return {
+        { "<leader>a", name = "ai" },
+        { "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle Chat (CodeCompanion)" },
+        { "<leader>aq", "<cmd>CodeCompanion<cr>", desc = "Quick Chat (CodeCompanion)" },
+        { "<leader>ap", "<cmd>CodeCompanionActions<cr>", desc = "Prompt Actions (CodeCompanion)" },
+      }
+    end,
     opts = {
       display = {
         action_palette = {
@@ -19,17 +27,29 @@ return {
         },
       },
       adapters = {
-        openai = function()
-          return require("codecompanion.adapters").extend("openai", {
+        gemini = function()
+          return require("codecompanion.adapters").extend("gemini", {
             env = {
-              api_key = "cmd:op read op://Prescrypto/OpenAI\\ Token/key --no-newline",
+              api_key = "cmd:op.exe read op://Odasoft/Gemini\\ Api\\ Key/credential --no-newline",
+            },
+            schema = {
+              model = {
+                default = "gemini-2.5-pro",
+              },
+              -- ["gemini-2.5-pro"] = { opts = { can_reason = true, has_vision = true } },
+              -- ["gemini-2.5-flash"] = { opts = { can_reason = true, has_vision = true } },
+              -- ["gemini-2.5-flash-preview-05-20"] = { opts = { can_reason = true, has_vision = true } },
+              -- ["gemini-2.0-flash"] = { opts = { has_vision = true } },
+              -- ["gemini-2.0-flash-lite"] = { opts = { has_vision = true } },
+              -- ["gemini-1.5-pro"] = { opts = { has_vision = true } },
+              -- ["gemini-1.5-flash"] = { opts = { has_vision = true } }
             },
           })
         end,
       },
       strategies = {
         chat = {
-          adapter = "copilot",
+          adapter = "gemini",
           tools = {
             ["mcp"] = {
               -- Prevent mcphub from loading before needed
