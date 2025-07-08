@@ -1,4 +1,6 @@
   path=(
+    # Snap
+    /snap/bin
     # Node version management
     $VOLTA_HOME/bin
     # Local paths

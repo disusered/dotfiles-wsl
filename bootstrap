@@ -54,8 +54,26 @@ cd "$HOME/.dotfiles"
 xargs -a $HOME/.dotfiles/packages.txt sudo apt-get install -y
 log "Installed packages from packages.txt"
 
+# Don't use mono for .exe files
+cli_status=$(update-binfmts --display cli 2>/dev/null)
+if [ -n "$cli_status" ]; then
+  if ! echo "$cli_status" | grep -q '(disabled)'; then
+    log "Disabling mono for .exe files"
+    sudo update-binfmts --disable cli
+  else
+    log "mono for .exe files is already disabled"
+  fi
+else
+  log "cli binfmt not configured, skipping"
+fi
+
 # Latex
-sudo snap install tectonic
+if ! command -v tectonic &>/dev/null; then
+  log "Installing Tectonic"
+  sudo snap install tectonic
+else
+  log "Tectonic is already installed"
+fi
 
 # Tmux Plugin Manager
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
