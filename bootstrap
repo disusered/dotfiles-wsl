@@ -130,6 +130,30 @@ log "Symlinking dotfiles with Stow"
 # TODO: git, btop, ncdu, lazygit, pip, mcphub
 stow -d $HOME/.dotfiles/confs -t $HOME -R neovim tmux zsh bat aider
 
+# Symlink Windows directories
+log "Symlinking Windows directories"
+if [ -d "/mnt/c/Users/carlo/OneDrive/Desktop/" ]; then
+  if [ ! -e "$HOME/Desktop" ]; then
+    log "Symlinking Windows Desktop"
+    ln -s "/mnt/c/Users/carlo/OneDrive/Desktop/" "$HOME/Desktop"
+  else
+    log "Desktop symlink/directory already exists, skipping."
+  fi
+else
+  log "Windows Desktop not found, skipping symlink."
+fi
+
+if [ -d "/mnt/c/Users/carlo/Downloads" ]; then
+  if [ ! -e "$HOME/Downloads" ]; then
+    log "Symlinking Windows Downloads"
+    ln -s "/mnt/c/Users/carlo/Downloads" "$HOME/Downloads"
+  else
+    log "Downloads symlink/directory already exists, skipping."
+  fi
+else
+  log "Windows Downloads not found, skipping symlink."
+fi
+
 # Set up bat theme cache
 batcat cache --build
 
