@@ -30,7 +30,7 @@ return {
       local csvview = require("csvview")
       return {
         {
-          "<leader>uv",
+          "<leader>C",
           function()
             csvview.toggle()
           end,
