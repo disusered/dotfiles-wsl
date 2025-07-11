@@ -150,7 +150,10 @@ vim: true
 #verbose: false
 
 ## Enable/disable multi-line input mode with Meta-Enter to submit (default: False)
-#multiline: false
+multiline: true
 
 ## Enable/disable terminal bell notifications when LLM responses are ready (default: False)
 notifications: true
+
+## Set notifications-command:
+notifications-command: "wsl-notify-send.exe"
