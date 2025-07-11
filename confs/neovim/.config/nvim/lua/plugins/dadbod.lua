@@ -105,7 +105,4 @@ return {
       callback = setup_project_databases,
     })
   end,
-  keys = {
-    { "<leader>uq", "<cmd>DBUIToggle<CR>", desc = "Toggle DBUI" },
-  },
 }
