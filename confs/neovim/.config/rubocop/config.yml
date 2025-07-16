@@ -1,0 +1,7 @@
+# Do not sort gems
+Bundler/OrderedGems:
+  Enabled: false
+
+# Do not refactor final if to next unless
+Style/Next:
+  Enabled: false
