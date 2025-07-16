@@ -40,4 +40,4 @@
 
 - Document scoop packages
   - Nuget
-  - ???
+  - win32yank
