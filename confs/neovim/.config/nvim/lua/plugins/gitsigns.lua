@@ -7,12 +7,12 @@ return {
       delete = { text = "_" },
       topdelete = { text = "‾" },
       changedelete = { text = "~" },
-      untracked = { text = "▎" }
-    }
+      untracked = { text = "▎" },
+    },
   },
 
   keys = function()
-    local gitsigns = require('gitsigns')
+    local gitsigns = require("gitsigns")
     return {
       {
         "<leader>gw",
@@ -25,10 +25,10 @@ return {
         desc = "Reset Buffer",
       },
       {
-        "<leader>gD",
-        gitsigns.toggle_deleted,
-        desc = "Toggle Deleted",
+        "<leader>gI",
+        gitsigns.preview_hunk_inline,
+        desc = "Preview Hunk Inline",
       },
     }
-  end
+  end,
 }
