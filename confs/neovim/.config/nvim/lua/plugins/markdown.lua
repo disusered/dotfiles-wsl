@@ -10,11 +10,11 @@ return {
         syntax = true, -- enable syntax highlighting, affects performance
         theme = "light", -- 'dark' or 'light'
         update_on_change = true,
-        app = "browser", -- 'webview', 'browser', string or a table of strings
+        app = "wslview", -- 'webview', 'browser', string or a table of strings
         filetype = { "markdown" }, -- list of filetypes to recognize as markdown
       })
-      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+      vim.api.nvim_create_user_command("MarkdownOpen", require("peek").open, {})
+      vim.api.nvim_create_user_command("MarkdownClose", require("peek").close, {})
     end,
 
     keys = function()
