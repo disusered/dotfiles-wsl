@@ -27,6 +27,7 @@ return {
         "git_rebase",
         "swift",
         "terraform",
+        "norg",
       })
     end,
   },
