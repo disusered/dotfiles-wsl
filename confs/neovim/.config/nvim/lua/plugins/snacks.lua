@@ -14,7 +14,9 @@ return {
     words = { enabled = true },
     bigfile = { notify = true },
     terminal = { enabled = false }, -- do not use snacks terminal
-    browse = { handler = "wslview" },
+    lazygit = {
+      configure = false,
+    },
   },
   keys = {
     {
