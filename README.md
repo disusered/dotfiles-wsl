@@ -41,3 +41,4 @@
 - Document scoop packages
   - Nuget
   - win32yank
+  - dual-monitor-tools
