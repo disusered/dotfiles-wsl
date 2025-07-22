@@ -14,6 +14,7 @@ return {
     words = { enabled = true },
     bigfile = { notify = true },
     terminal = { enabled = false }, -- do not use snacks terminal
+    browse = { handler = "wslview" },
   },
   keys = {
     {

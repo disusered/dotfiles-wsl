@@ -48,6 +48,7 @@ require("lazy").setup({
   },
   install = { colorscheme = { "catpuccin", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
+  ui = { browser = "wslview" }, -- use wslview to open links in the browser
   performance = {
     rtp = {
       -- disable some rtp plugins
