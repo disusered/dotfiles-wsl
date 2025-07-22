@@ -5,6 +5,9 @@
 
 -- This file contains custom keymaps, as well as overrides for the default keymaps.
 
+-- my personal keymaps
+vim.keymap.set("n", "<leader><enter>", "<cmd>w<CR>", { desc = "Save file", silent = true, noremap = true })
+
 -- remove buffer changing keymaps
 vim.keymap.del("n", "<S-h>")
 vim.keymap.del("n", "<S-l>")
@@ -21,6 +24,3 @@ vim.keymap.del("t", "<C-_>")
 vim.keymap.del("n", "<leader>wd")
 vim.keymap.del("n", "<leader>-")
 vim.keymap.del("n", "<leader>|")
-
--- my personal keymaps
-vim.keymap.set("n", "<leader><enter>", "<cmd>w<CR>", { desc = "Save file", silent = true, noremap = true })

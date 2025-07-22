@@ -127,8 +127,8 @@ fi
 
 # Configure symlinks to configs
 log "Symlinking dotfiles with Stow"
-# TODO: git, btop, ncdu, lazygit, pip, mcphub
-stow -d $HOME/.dotfiles/confs -t $HOME -R neovim tmux zsh bat aider
+# TODO: git, btop, ncdu, pip, mcphub
+stow -d $HOME/.dotfiles/confs -t $HOME -R neovim tmux zsh bat aider lazygit
 
 # Symlink Windows directories
 log "Symlinking Windows directories"
