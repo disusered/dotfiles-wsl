@@ -13,6 +13,7 @@ return {
     statuscolumn = { enabled = false }, -- we set this in options.lua
     words = { enabled = true },
     bigfile = { notify = true },
+    terminal = { enabled = false }, -- do not use snacks terminal
   },
   keys = {
     {
