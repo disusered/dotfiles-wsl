@@ -144,13 +144,13 @@ upgrade: false
 #show-prompts: false
 
 ## Use VI editing mode in the terminal (default: False)
-vim: true
+vim: false
 
 ## Enable verbose output
 #verbose: false
 
 ## Enable/disable multi-line input mode with Meta-Enter to submit (default: False)
-multiline: true
+multiline: false
 
 ## Enable/disable terminal bell notifications when LLM responses are ready (default: False)
 notifications: true

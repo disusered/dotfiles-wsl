@@ -50,7 +50,7 @@ alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true 
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 
 # Aider (AI assistant)
-alias ai='aider --api-key gemini=`op read op://Odasoft/Gemini\ API\ Key/credential` --model gemini-2.5-pro'
+alias ai='aider --api-key gemini=`op read op://Odasoft/Gemini\ API\ Key/credential` --model gemini-2.5-pro --vim'
 # alias coder='aider --api-key openai=`op.exe read op://Prescrypto/OpenAI\ Token/key`'
 # alias reason='aider --api-key openai=`op.exe read op://Prescrypto/OpenAI\ Token/key` --model o3-mini --reasoning-effort high'
 

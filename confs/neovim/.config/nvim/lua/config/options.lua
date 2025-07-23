@@ -100,3 +100,6 @@ vim.g.clipboard = {
   },
   cache_enabled = 1,
 }
+
+-- Automatically load changes to file
+vim.opt.autoread = true
