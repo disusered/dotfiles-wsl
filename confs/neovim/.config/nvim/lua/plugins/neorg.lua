@@ -1,27 +1,25 @@
 return {
-  {
-    "nvim-neorg/neorg",
-    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-    version = "*", -- Pin Neorg to the latest stable release
-    config = function()
-      require("neorg").setup({
-        load = {
-          ["core.defaults"] = {},
-          ["core.concealer"] = {},
-          ["core.dirman"] = {
-            config = {
-              workspaces = {
-                default = "~/Development/neorg/",
-                study = "~/Development/neorg/study",
-              },
-              default_workspace = "default",
+  "nvim-neorg/neorg",
+  lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+  version = "*", -- Pin Neorg to the latest stable release
+  config = function()
+    require("neorg").setup({
+      load = {
+        ["core.defaults"] = {},
+        ["core.concealer"] = {},
+        ["core.dirman"] = {
+          config = {
+            workspaces = {
+              default = "~/Development/neorg/",
+              study = "~/Development/neorg/study",
             },
+            default_workspace = "default",
           },
         },
-      })
+      },
+    })
 
-      vim.wo.foldlevel = 99
-      vim.wo.conceallevel = 2
-    end,
-  },
+    vim.wo.foldlevel = 99
+    vim.wo.conceallevel = 2
+  end,
 }

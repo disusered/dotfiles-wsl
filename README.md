@@ -41,17 +41,19 @@
 - [x] Wezterm basic setup
 - [x] Starship replace Pure
 - [x] Eza https://github.com/eza-community/eza
-- [ ] Wezterm Tmux replacement https://www.florianbellmann.com/blog/switch-from-tmux-to-wezterm
-- [ ] Wezterm sessions https://wezterm.org/recipes/workspaces.html
+- [x] Wezterm Tmux replacement https://www.florianbellmann.com/blog/switch-from-tmux-to-wezterm
+- [ ] Wezterm workspaces https://wezterm.org/recipes/workspaces.html
+- [ ] Wezterm sessions
+- [ ] Wezterm launch menu https://wezterm.org/config/launch.html#the-launcher-menu
 - [ ] Yazi over ranger https://yazi-rs.github.io/docs/installation
 - [ ] Dragon https://github.com/mwh/dragon
 - [ ] Terminal hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements
-- [ ] Use justfile https://github.com/casey/just
-- [ ] Wezterm launch menu https://wezterm.org/config/launch.html#the-launcher-menu
+- [ ] Use justfile for dotfile actions https://github.com/casey/just
 - [ ] Starship indicate inside container
 - [ ] Starship give Docker context
 - [ ] Starship show sudo status
 - [ ] Eza completion https://eza.rocks/
+- [ ] Wezterm quick select https://wezterm.org/quickselect.html
 
 - Document scoop packages
   - Nuget

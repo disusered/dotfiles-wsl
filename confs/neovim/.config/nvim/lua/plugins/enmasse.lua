@@ -1,6 +1,4 @@
 return {
-  {
-    "Olical/vim-enmasse",
-    cmd = "EnMasse",
-  },
+  "Olical/vim-enmasse",
+  cmd = "EnMasse",
 }

@@ -1,6 +1,4 @@
 return {
-  {
-    "tpope/vim-eunuch",
-    vscode = true,
-  },
+  "tpope/vim-eunuch",
+  vscode = true,
 }

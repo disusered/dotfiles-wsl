@@ -1,6 +1,4 @@
 return {
-  {
-    "tpope/vim-surround",
-    vscode = true,
-  },
+  "tpope/vim-surround",
+  vscode = true,
 }

@@ -1,6 +1,4 @@
 return {
-  {
-    "tpope/vim-abolish",
-    vscode = true,
-  },
+  "tpope/vim-abolish",
+  vscode = true,
 }
