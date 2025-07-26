@@ -22,9 +22,9 @@ return {
     end,
     opts = {
       display = {
-        action_palette = {
-          provider = "telescope", -- Ensure action palettes use "telescope"
-        },
+        -- action_palette = {
+        --   provider = "telescope", -- Ensure action palettes use "telescope"
+        -- },
       },
       adapters = {
         gemini = function()
@@ -59,43 +59,43 @@ return {
               description = "Call tools and resources from the MCP Servers",
             },
           },
-          slash_commands = {
-            ["buffer"] = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-            ["file"] = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-            ["help"] = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-            ["now"] = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-            ["symbols"] = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-            ["terminal"] = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-            ["workspace"] = {
-              opts = {
-                provider = "telescope",
-              },
-            },
-          },
+          -- slash_commands = {
+          --   ["buffer"] = {
+          --     opts = {
+          --       provider = "telescope",
+          --     },
+          --   },
+          --   ["file"] = {
+          --     opts = {
+          --       provider = "telescope",
+          --     },
+          --   },
+          --   ["help"] = {
+          --     opts = {
+          --       provider = "telescope",
+          --     },
+          --   },
+          --   ["now"] = {
+          --     opts = {
+          --       provider = "telescope",
+          --     },
+          --   },
+          --   ["symbols"] = {
+          --     opts = {
+          --       provider = "telescope",
+          --     },
+          --   },
+          --   ["terminal"] = {
+          --     opts = {
+          --       provider = "telescope",
+          --     },
+          --   },
+          --   ["workspace"] = {
+          --     opts = {
+          --       provider = "telescope",
+          --     },
+          --   },
+          -- },
         },
         inline = {
           adapter = "copilot",
