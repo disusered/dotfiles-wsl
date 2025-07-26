@@ -103,3 +103,6 @@ vim.g.clipboard = {
 
 -- Automatically load changes to file
 vim.opt.autoread = true
+
+-- Set to "solargraph" to use solargraph instead of "ruby_lsp".
+vim.g.lazyvim_ruby_lsp = "solargraph"

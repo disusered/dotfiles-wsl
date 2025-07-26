@@ -27,6 +27,7 @@ return {
         "black",
         "erb-formatter",
         "erb-lint",
+        "solargraph",
       },
     },
   },
