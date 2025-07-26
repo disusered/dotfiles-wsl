@@ -19,6 +19,9 @@ alias ag='ag --hidden --pager "less -R" --color-line-number 1\;35 --color-path 1
 # HTTPie for HTTP requests
 alias http='http --style vim'
 
+# Replace ls with eza (a modern replacement for ls)
+alias ls='eza --hyperlink'
+
 # Git aliases
 alias g='git'
 alias gl="gli"

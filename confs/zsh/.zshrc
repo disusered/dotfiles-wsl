@@ -13,6 +13,7 @@ source "/home/carlos/.deno/env"
 # plugins
 zplugin light zsh-users/zsh-history-substring-search
 zplugin light zdharma/fast-syntax-highlighting
+zplugin light z-shell/zsh-eza
 
 # Better vi mode
 zinit ice depth=1

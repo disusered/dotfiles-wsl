@@ -33,3 +33,4 @@ mono-devel
 postgresql-client
 wslu
 graphviz
+eza

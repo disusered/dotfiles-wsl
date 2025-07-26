@@ -44,5 +44,9 @@ export ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Set flavor for Catppuccin theme i.e. latte, frappe, macchiato, mocha
 export CATPPUCCIN_FLAVOR="mocha"
+
+# Volta for Node.js
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Set EZF options
+_EZA_PARAMS=('--git' '--group' '--group-directories-first' '--time-style=long-iso')
