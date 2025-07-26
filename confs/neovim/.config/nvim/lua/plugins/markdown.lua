@@ -18,22 +18,28 @@ return {
 
   keys = function()
     local peek = require("peek")
-    local peek_toggle = function()
-      if peek.is_open() then
-        peek.close()
-      else
-        peek.open()
-      end
-    end
-
-    return {
+    local wk = require("which-key")
+    wk.add({
       {
-        "<leader>cp",
+        "<leader>up",
         function()
-          peek_toggle()
+          if peek.is_open() then
+            peek.close()
+          else
+            peek.open()
+          end
         end,
-        desc = "Toggle markdown preview",
+        desc = function()
+          return peek.is_open() and "Disable Markdown Preview" or "Enable Markdown Preview"
+        end,
+        icon = function()
+          if peek.is_open() then
+            return { icon = "", color = "green" }
+          else
+            return { icon = "", color = "yellow" }
+          end
+        end,
       },
-    }
+    })
   end,
 }
