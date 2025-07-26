@@ -42,12 +42,12 @@
 - [x] Starship replace Pure
 - [x] Eza https://github.com/eza-community/eza
 - [x] Wezterm Tmux replacement https://www.florianbellmann.com/blog/switch-from-tmux-to-wezterm
+- [ ] Terminal hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements https://dandavison.github.io/delta/hyperlinks.html
 - [ ] Wezterm workspaces https://wezterm.org/recipes/workspaces.html
 - [ ] Wezterm sessions
 - [ ] Wezterm launch menu https://wezterm.org/config/launch.html#the-launcher-menu
 - [ ] Yazi over ranger https://yazi-rs.github.io/docs/installation
 - [ ] Dragon https://github.com/mwh/dragon
-- [ ] Terminal hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements
 - [ ] Use justfile for dotfile actions https://github.com/casey/just
 - [ ] Starship indicate inside container
 - [ ] Starship give Docker context

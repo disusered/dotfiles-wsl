@@ -8,7 +8,6 @@ ripgrep
 lua5.4
 7zip
 unzip
-silversearcher-ag
 fzf
 luarocks
 fd-find

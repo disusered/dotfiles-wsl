@@ -1,3 +1,14 @@
+# Search with ripgrep and pipe to delta for a side-by-side view
+# Usage: rgi [rg_flags] <search_term>
+# Example: rgi -C 2 my_search_term
+rgi() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: rgi [rg_flags] <search_term>" >&2
+    return 1
+  fi
+  rg --hidden --json -C 2 "$@" | delta
+}
+
 # https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/lib/clipboard.zsh
 #
 # System clipboard integration

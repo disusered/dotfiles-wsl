@@ -83,6 +83,14 @@ else
   log "Rust is already installed."
 fi
 
+# Git-Delta
+if ! command -v delta &>/dev/null; then
+  log "Installing Git-Delta"
+  cargo install git-delta
+else
+  log "Git-Delta is already installed"
+fi
+
 # Deno
 if ! command -v deno &>/dev/null; then
   log "Installing Deno"

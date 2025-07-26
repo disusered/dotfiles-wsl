@@ -49,4 +49,4 @@ export CATPPUCCIN_FLAVOR="mocha"
 export VOLTA_HOME="$HOME/.volta"
 
 # Set EZF options
-_EZA_PARAMS=('--git' '--group' '--group-directories-first' '--time-style=long-iso')
+export _EZA_PARAMS=('--git' '--group' '--group-directories-first' '--time-style=long-iso')
