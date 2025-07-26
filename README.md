@@ -54,6 +54,7 @@
 - [ ] Starship show sudo status
 - [ ] Eza completion https://eza.rocks/
 - [ ] Wezterm quick select https://wezterm.org/quickselect.html
+- [ ] Dim inactive panes in Wezterm & Neovim
 
 - Document scoop packages
   - Nuget

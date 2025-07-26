@@ -75,14 +75,6 @@ else
   log "Tectonic is already installed"
 fi
 
-# Tmux Plugin Manager
-if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
-  log "Installing Tmux Plugin Manager"
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-else
-  log "Tmux Plugin Manager already installed"
-fi
-
 # Rust
 if ! command -v cargo &>/dev/null; then
   log "Installing Rust and Tree-sitter CLI 🦀"
@@ -128,7 +120,7 @@ fi
 # Configure symlinks to configs
 log "Symlinking dotfiles with Stow"
 # TODO: git, btop, ncdu, pip
-stow -d $HOME/.dotfiles/confs -t $HOME -R neovim tmux zsh bat aider lazygit editline wezterm starship
+stow -d $HOME/.dotfiles/confs -t $HOME -R neovim zsh bat aider lazygit editline wezterm starship
 
 # Symlink Windows directories
 log "Symlinking Windows directories"
