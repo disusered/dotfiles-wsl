@@ -1,9 +1,6 @@
 return {
   -- disable bufferline
   { "akinsho/bufferline.nvim", enabled = false },
-  -- disable visual aids on fFtT and /
-  { "folke/flash.nvim", enabled = false },
-  { "ggandor/flit.nvim", enabled = false },
   -- no automatic pairs
   { "mini.pairs", enabled = false },
   -- no session management
