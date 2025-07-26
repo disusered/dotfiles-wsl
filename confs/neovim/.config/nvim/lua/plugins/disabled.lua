@@ -14,4 +14,6 @@ return {
   { "folke/edgy.nvim", enabled = false },
   -- no file explorer
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+  -- disable visual aids on fFtT and /
+  { "folke/flash.nvim", enabled = false },
 }
