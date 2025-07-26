@@ -38,6 +38,16 @@
 
 # TODO:
 
+- [x] Wezterm basic setup
+- [x] Starship replace Pure
+- [x] Eza https://github.com/eza-community/eza
+- [ ] Wezterm Tmux replacement https://www.florianbellmann.com/blog/switch-from-tmux-to-wezterm
+- [ ] Wezterm sessions https://wezterm.org/recipes/workspaces.html
+- [ ] Yazi over ranger https://yazi-rs.github.io/docs/installation
+- [ ] Dragon https://github.com/mwh/dragon
+- [ ] Terminal hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements
+- [ ] Use justfile https://github.com/casey/just
+
 - Document scoop packages
   - Nuget
   - win32yank

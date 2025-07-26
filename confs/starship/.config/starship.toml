@@ -10,8 +10,8 @@ $username\
 $hostname\
 $directory\
 $git_branch\
+$git_metrics\
 $git_state\
-$git_status\
 $cmd_duration\
 $line_break\
 $character"""
@@ -39,6 +39,7 @@ $rlang\
 $ruby\
 $rust\
 $swift\
+$memory_usage\
 $time"""
 
 [directory]
@@ -51,29 +52,32 @@ success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](sapphire)"
 
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "red"
+
 [git_branch]
 symbol = " "
 format = '[$symbol$branch(:$remote_branch)]($style) '
 style = "bold mauve"
 
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "red"
-
-[git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-# conflicted = "​"
-# untracked = "​"
-# modified = "​"
-# staged = "​"
-# renamed = "​"
-# deleted = "​"
-# stashed = "≡"
+[git_metrics]
+disabled = false
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+added_style = "bold green"
+deleted_style = "bold red"
+only_nonzero_diffs = true
 
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
+
+[memory_usage]
+disabled = false
+threshold = 75 # only show if memory usage is above this percentage
+symbol = '󰍛 '
+format='$symbol [${ram}( | ${swap})]($style) '
+style = 'bold dimmed red'
 
 [time]
 disabled = false
