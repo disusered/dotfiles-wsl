@@ -1,26 +1,15 @@
--- Pull in the wezterm API
-local wezterm = require("wezterm")
+local init = require("init")
+local fonts = require("fonts")
 
 -- This will hold the configuration.
-local config = wezterm.config_builder()
+local config = {}
+local keys = {}
+local mouse_bindings = {}
+local launch_menu = {}
 
--- This is where you actually apply your config choices.
-
--- For example, changing the initial geometry for new windows:
-config.initial_cols = 120
-config.initial_rows = 28
-
--- or, changing the font size and color scheme.
-config.font_size = 10
-config.color_scheme = "AdventureTime"
-
-config.keys = {
-	{
-		key = "r",
-		mods = "CMD|SHIFT",
-		action = wezterm.action.ReloadConfiguration,
-	},
-}
+-- Apply configs
+init.apply_to_config(config)
+fonts.apply_to_config(config)
 
 -- Finally, return the configuration to wezterm:
 return config
