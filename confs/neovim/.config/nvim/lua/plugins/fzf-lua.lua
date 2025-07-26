@@ -30,22 +30,6 @@ return {
     },
     keys = {
       {
-        -- keymap to browse files
-        "<leader>p",
-        function()
-          require("fzf-lua").files()
-        end,
-        desc = "Find file",
-      },
-      {
-        -- keymap to browse buffer
-        "<leader>b",
-        function()
-          require("fzf-lua").buffers()
-        end,
-        desc = "Find buffer",
-      },
-      {
         -- keymap to grep for grepping the name under the cursor
         "!",
         function()
