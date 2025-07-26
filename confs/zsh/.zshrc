@@ -10,11 +10,6 @@ source $HOME/.config/zsh/zshfuns
 # Load Deno
 source "/home/carlos/.deno/env"
 
-# theme
-# https://github.com/sindresorhus/pure
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
-
 # plugins
 zplugin light zsh-users/zsh-history-substring-search
 zplugin light zdharma/fast-syntax-highlighting
@@ -101,3 +96,5 @@ compinit
 # fast-theme ~/.config/fsh/catppuccin-$CATPPUCCIN_FLAVOR
 
 . "$HOME/.local/bin/env"
+
+eval "$(starship init zsh)"

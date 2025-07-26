@@ -1,0 +1,220 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Sets user-defined palette
+palette = "catppuccin_mocha"
+
+# Pure preset
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
+right_format = """
+$bun\
+$c\
+$cpp\
+$cmake\
+$conda\
+$deno\
+$dotnet\
+$docker_context\
+$elixir\
+$golang\
+$haskell\
+$java\
+$julia\
+$lua\
+$nodejs\
+$python\
+$perl\
+$php\
+$rlang\
+$ruby\
+$rust\
+$swift\
+$time"""
+
+[directory]
+read_only = " 󰌾"
+truncation_length = 4
+style = "bold lavender"
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](sapphire)"
+
+[git_branch]
+symbol = " "
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = "bold mauve"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "red"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+# conflicted = "​"
+# untracked = "​"
+# modified = "​"
+# staged = "​"
+# renamed = "​"
+# deleted = "​"
+# stashed = "≡"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[time]
+disabled = false
+format = "[ $time]($style)"
+utc_time_offset = "local"
+style = "italic dimmed white"
+
+[bun]
+symbol = " "
+format = "[$symbol bun $version ]($style)"
+style = "bright-black"
+
+[c]
+symbol = " "
+format = "[$symbol c $version(-$name) ]($style)"
+style = "bright-black"
+
+[cpp]
+symbol = " "
+format = "[$symbol cpp $version(-$name) ]($style)"
+style = "bright-black"
+
+[cmake]
+symbol = " "
+format = "[$symbol cmake $version ]($style)"
+style = "bright-black"
+
+[conda]
+symbol = " "
+format = "[$symbol conda $version ]($style)"
+style = "bright-black"
+
+[deno]
+symbol = " "
+format = "[$symbol deno $version ]($style)"
+style = "bright-black"
+
+[dotnet]
+symbol = ""
+format = "[$symbol deno $version (🎯 $tfm )]($style)"
+style = "bright-black"
+
+[docker_context]
+symbol = " "
+format = "[$symbol docker $version ]($style)"
+style = "bright-black"
+
+[elixir]
+symbol = " "
+format = "[$symbol elixir $version (OTP $otp_version )]($style)"
+style = "bright-black"
+
+[golang]
+symbol = " "
+format = "[$symbol go $version ]($style)"
+style = "bright-black"
+
+[haskell]
+symbol = " "
+format = "[$symbol haskell $version ]($style)"
+style = "bright-black"
+
+[java]
+symbol = " "
+format = "[$symbol java $version ]($style)"
+style = "bright-black"
+
+[julia]
+symbol = " "
+format = "[$symbol julia $version ]($style)"
+style = "bright-black"
+
+[lua]
+symbol = " "
+format = "[$symbol lua $version ]($style)"
+style = "bright-black"
+
+[nodejs]
+symbol = " "
+format = "[$symbol node $version ]($style)"
+style = "bright-black"
+
+[perl]
+symbol = " "
+format = "[$symbol perl $version ]($style)"
+style = "bright-black"
+
+[php]
+symbol = " "
+format = "[$symbol php $version ]($style)"
+style = "bright-black"
+
+[rlang]
+symbol = "󰟔 "
+format = "[$symbol R $version ]($style)"
+style = "bright-black"
+
+[ruby]
+symbol = " "
+format = "[$symbol ruby $version ]($style)"
+style = "bright-black"
+
+[rust]
+symbol = "󱘗 "
+format = "[$symbol rust $version ]($style)"
+style = "bright-black"
+
+[swift]
+symbol = " "
+format = "[$symbol swift $version ]($style)"
+style = "bright-black"
+
+[python]
+symbol = " "
+format = "($virtualenv) [$symbol python $pyenv_prefix($version )]($style)"
+style = "bright-black"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
