@@ -51,8 +51,20 @@
 - [ ] Starship indicate inside container
 - [ ] Starship give Docker context
 - [ ] Starship show sudo status
+- [ ] Eza completion https://eza.rocks/
 
 - Document scoop packages
   - Nuget
   - win32yank
   - dual-monitor-tools
+
+- Document Wezterm windows setup
+ - Elevated Powershell
+
+  ```powershell
+  cmd /c mklink /D "C:\Users\carlo\.config\wezterm" "\\wsl`$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.config\wezterm"
+  symbolic link created for C:\Users\carlo\.config\wezterm <<===>> \\wsl$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.config\wezterm
+
+  cmd /c mklink "C:\Users\carlo\.wezterm.lua" "\\wsl`$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.wezterm.lua"
+  symbolic link created for C:\Users\carlo\.wezterm.lua <<===>> \\wsl$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.wezterm.lua
+  ```
