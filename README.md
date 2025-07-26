@@ -47,6 +47,10 @@
 - [ ] Dragon https://github.com/mwh/dragon
 - [ ] Terminal hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements
 - [ ] Use justfile https://github.com/casey/just
+- [ ] Wezterm launch menu https://wezterm.org/config/launch.html#the-launcher-menu
+- [ ] Starship indicate inside container
+- [ ] Starship give Docker context
+- [ ] Starship show sudo status
 
 - Document scoop packages
   - Nuget

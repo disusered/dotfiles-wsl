@@ -1,5 +1,6 @@
 local init = require("init")
 local fonts = require("fonts")
+local tabbar = require("tabbar")
 
 -- This will hold the configuration.
 local config = {}
@@ -10,6 +11,7 @@ local launch_menu = {}
 -- Apply configs
 init.apply_to_config(config)
 fonts.apply_to_config(config)
+tabbar.apply_to_config(config)
 
 -- Finally, return the configuration to wezterm:
 return config

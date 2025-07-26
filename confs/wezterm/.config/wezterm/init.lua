@@ -14,10 +14,6 @@ function module.apply_to_config(config)
 		},
 	}
 	config.default_domain = "WSL:Ubuntu"
-
-	-- Tab bar
-	config.use_fancy_tab_bar = false
-	config.hide_tab_bar_if_only_one_tab = false
 end
 
 return module
