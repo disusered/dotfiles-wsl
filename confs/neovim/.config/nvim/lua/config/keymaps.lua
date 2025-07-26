@@ -8,11 +8,6 @@
 -- my personal keymaps
 vim.keymap.set("n", "<leader><enter>", "<cmd>w<CR>", { desc = "Save file", silent = true, noremap = true })
 
--- Open LazyGit
-vim.keymap.set("n", "<leader>gs", function()
-  Snacks.lazygit({ cwd = LazyVim.root.git() })
-end, { desc = "Lazygit (Root Dir)" })
-
 -- remove buffer changing keymaps
 vim.keymap.del("n", "<S-h>")
 vim.keymap.del("n", "<S-l>")
