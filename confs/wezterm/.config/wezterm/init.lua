@@ -20,10 +20,11 @@ function module.apply_to_config(config)
 		{
 			name = "WSL:Ubuntu",
 			distribution = "Ubuntu",
+			default_cwd = "/home/carlos",
 		},
 	}
 
-	-- Default WSL domain is Ubuntu
+	-- Default domain is WSL Ubuntu
 	config.default_domain = "WSL:Ubuntu"
 end
 
