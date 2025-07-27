@@ -49,7 +49,7 @@
 - [x] Delta theme
 - [x] Wezterm quick select https://wezterm.org/quickselect.html
 - [x] Wezterm customize tab bar https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#tab-bar
-- [ ] Wezterm workspaces https://wezterm.org/recipes/workspaces.html
+- [x] Wezterm workspaces https://wezterm.org/recipes/workspaces.html
 - [ ] Wezterm sessions https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#session
 - [ ] Yazi over ranger https://yazi-rs.github.io/docs/installation
 - [ ] Wezterm Eza hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements

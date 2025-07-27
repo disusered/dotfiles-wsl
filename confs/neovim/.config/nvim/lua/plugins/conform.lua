@@ -7,9 +7,6 @@ return {
     table.insert(opts.formatters_by_ft["*"], "trim_newlines")
 
     opts.formatters_by_ft["sql"] = { "sqlfluff" }
-    opts.formatters = opts.formatters or {}
-    opts.formatters["sqlfluff"] = {
-      prepend_args = { "--dialect", "postgres" },
-    }
+    table.insert(opts.formatters_by_ft["sql"], "sqlfluff")
   end,
 }
