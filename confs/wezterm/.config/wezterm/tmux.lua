@@ -218,12 +218,9 @@ function M.apply_to_config(config, _)
 		-- Go to last tab
 		{ key = "b", mods = "LEADER|CTRL", action = act.ActivateLastTab },
 
-		-- TODO: ???
 		-- Workspaces
-		{ key = "$", mods = "LEADER", action = M.action.RenameWorkspace },
-		{ key = "s", mods = "LEADER|CTRL", action = M.action.WorkspaceSelect },
-		{ key = "[", mods = "LEADER", action = act.SwitchWorkspaceRelative(-1) },
-		{ key = "]", mods = "LEADER", action = act.SwitchWorkspaceRelative(1) },
+		{ key = "$", mods = "LEADER|SHIFT", action = M.action.RenameWorkspace },
+		{ key = " ", mods = "LEADER", action = M.action.WorkspaceSelect },
 
 		-- Vertical/Horizontal split
 		{
@@ -244,13 +241,13 @@ function M.apply_to_config(config, _)
 		{ key = "m", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
 
 		-- Move pane to a new tab
-		{ key = "!", mods = "LEADER", action = M.action.MovePaneToNewTab },
+		{ key = "!", mods = "LEADER|SHIFT", action = M.action.MovePaneToNewTab },
 
 		-- Close the current pane
 		{ key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 
 		-- Quick Select URLs and files
-		{ key = " ", mods = "LEADER", action = act.QuickSelect },
+		{ key = "s", mods = "LEADER|CTRL", action = act.QuickSelect },
 
 		-- Copy Mode
 		{ key = "[", mods = "LEADER", action = act.ActivateCopyMode },

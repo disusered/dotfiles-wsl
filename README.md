@@ -49,7 +49,6 @@
 - [x] Delta theme
 - [x] Wezterm quick select https://wezterm.org/quickselect.html
 - [x] Wezterm customize tab bar https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#tab-bar
-- [ ] Dim inactive panes in Wezterm & Neovim
 - [ ] Wezterm workspaces https://wezterm.org/recipes/workspaces.html
 - [ ] Wezterm sessions https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#session
 - [ ] Yazi over ranger https://yazi-rs.github.io/docs/installation
@@ -68,6 +67,9 @@
 - [ ] Neovim number/icon column same background as default background
 - [ ] Neovim Markdown outline sidebar
 - [ ] Neovim symbol position under tabline Foo > Bar
+
+**Difficult**:
+- [ ] Dim inactive panes in Wezterm & Neovim
 
 - Document scoop packages
   - Nuget
