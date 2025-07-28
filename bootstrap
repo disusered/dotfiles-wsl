@@ -181,3 +181,11 @@ if ! command -v just &>/dev/null; then
 else
   log "Just is already installed"
 fi
+
+# Zoxide
+if ! command -v zoxide &>/dev/null; then
+  log "Installing Zoxide"
+  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+else
+  log "Zoxide is already installed"
+fi

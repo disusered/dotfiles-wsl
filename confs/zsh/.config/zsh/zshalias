@@ -23,6 +23,9 @@ alias http='http --style vim'
 # Replace ls with eza (a modern replacement for ls)
 alias ls='eza --hyperlink'
 
+# Replace cd with z (a smarter cd command)
+alias cd='z'
+
 # Git aliases
 alias g='git'
 alias gl="gli"

@@ -101,4 +101,8 @@ compinit
 
 . "$HOME/.local/bin/env"
 
+# Initialize Starship prompt
 eval "$(starship init zsh)"
+
+# Initialize zoxide
+eval "$(zoxide init zsh)"
