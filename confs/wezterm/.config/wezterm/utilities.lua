@@ -1,11 +1,11 @@
-local wez = require("wezterm")
+local wezterm = require("wezterm")
 
 ---@private
 ---@class utilities
 local H = {}
 
 ---@type string
-H.home = (os.getenv("USERPROFILE") or os.getenv("HOME") or wez.home_dir or ""):gsub("\\", "/")
+H.home = (os.getenv("USERPROFILE") or os.getenv("HOME") or wezterm.home_dir or ""):gsub("\\", "/")
 
 ---@type boolean
 H.is_windows = package.config:sub(1, 1) == "\\"
@@ -106,6 +106,13 @@ H._constant_width = function(prev, next)
 	local first_half = math.floor(spacing / 2)
 	local second_half = math.ceil(spacing / 2)
 	return H._space(next, first_half, second_half)
+end
+
+-- log to wezterm's log
+--- @param value any
+--- @return nil
+H.inspect = function(value)
+	wezterm.log_info("Inspect: " .. wezterm.to_string(value))
 end
 
 return H

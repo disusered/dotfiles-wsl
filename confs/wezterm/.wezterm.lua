@@ -15,6 +15,8 @@ local config = wezterm.config_builder()
 init.apply_to_config(config)
 tmux.apply_to_config(config)
 fonts.apply_to_config(config)
+keys.apply_to_config(config)
+sessions.apply_to_config(config)
 tabbar.apply_to_config(config, {
 	modules = {
 		-- Change the leader icon
@@ -31,8 +33,6 @@ tabbar.apply_to_config(config, {
 		clock = { enabled = false },
 	},
 })
-keys.apply_to_config(config)
-sessions.apply_to_config(config)
 
 -- Finally, return the configuration to wezterm:
 return config

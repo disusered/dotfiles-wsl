@@ -1,17 +1,17 @@
-local wez = require("wezterm")
+local wezterm = require("wezterm")
 
 ---@class bar.wezterm
 local M = {}
 local options = {}
 
 local separator = package.config:sub(1, 1) == "\\" and "\\" or "/"
-local plugin_dir = wez.plugin.list()[1].plugin_dir:gsub(separator .. "[^" .. separator .. "]*$", "")
+local plugin_dir = wezterm.plugin.list()[1].plugin_dir:gsub(separator .. "[^" .. separator .. "]*$", "")
 
 ---checks if the plugin directory exists
 ---@param path string
 ---@return boolean
 local function directory_exists(path)
-	local success, result = pcall(wez.read_dir, plugin_dir .. path)
+	local success, result = pcall(wezterm.read_dir, plugin_dir .. path)
 	return success and result
 end
 
@@ -52,29 +52,31 @@ M.apply_to_config = function(c, opts)
 	-- combine user config with defaults
 	options = config.extend_options(config.options, opts)
 
-	local scheme = wez.color.get_builtin_schemes()[c.color_scheme]
+	local scheme = wezterm.color.get_builtin_schemes()[c.color_scheme]
 	if scheme ~= nil then
 		if c.colors ~= nil then
 			scheme = utilities._merge(scheme, c.colors)
 		end
+		-- utilities.inspect(scheme.ansi)
+		utilities.inspect(options.modules)
 		local default_colors = {
 			tab_bar = {
-				background = "transparent",
+				background = "#181825",
 				active_tab = {
 					bg_color = "transparent",
-					fg_color = scheme.ansi[options.modules.tabs.active_tab_fg],
+					fg_color = scheme.ansi[8],
 				},
 				inactive_tab = {
-					bg_color = "transparent",
-					fg_color = scheme.ansi[options.modules.tabs.inactive_tab_fg],
+					bg_color = "#11111b",
+					fg_color = scheme.ansi[1],
 				},
 				new_tab = {
-					bg_color = "transparent",
-					fg_color = scheme.ansi[options.modules.tabs.new_tab_fg],
+					bg_color = "#181825",
+					fg_color = scheme.ansi[3],
 				},
 			},
 		}
-		c.colors = utilities._merge(default_colors, scheme)
+		c.colors = utilities._merge(scheme, default_colors)
 	end
 
 	-- make the plugin own these settings
@@ -83,7 +85,7 @@ M.apply_to_config = function(c, opts)
 	c.tab_max_width = options.max_width
 end
 
-wez.on("format-tab-title", function(tab, _, _, conf, _, _)
+wezterm.on("format-tab-title", function(tab, _, _, conf, _, _)
 	local palette = conf.resolved_palette
 
 	local index = tab.tab_index + 1
@@ -94,7 +96,7 @@ wez.on("format-tab-title", function(tab, _, _, conf, _, _)
 
 	local width = conf.tab_max_width - offset
 	if #title > conf.tab_max_width then
-		title = wez.truncate_right(title, width) .. "…"
+		title = wezterm.truncate_right(title, width) .. "…"
 	end
 
 	local fg = palette.tab_bar.inactive_tab.fg_color
@@ -111,7 +113,7 @@ wez.on("format-tab-title", function(tab, _, _, conf, _, _)
 	}
 end)
 
-wez.on("update-status", function(window, pane)
+wezterm.on("update-status", function(window, pane)
 	local present, conf = pcall(window.effective_config, window)
 	if not present then
 		return
@@ -165,7 +167,7 @@ wez.on("update-status", function(window, pane)
 	end
 
 	::set_left_status::
-	window:set_left_status(wez.format(left_cells))
+	window:set_left_status(wezterm.format(left_cells))
 
 	-- right status
 	local right_cells = {
@@ -182,13 +184,13 @@ wez.on("update-status", function(window, pane)
 		{
 			name = "hostname",
 			func = function()
-				return wez.hostname()
+				return wezterm.hostname()
 			end,
 		},
 		{
 			name = "clock",
 			func = function()
-				return wez.time.now():format(options.modules.clock.format)
+				return wezterm.time.now():format(options.modules.clock.format)
 			end,
 		},
 		{
@@ -225,7 +227,7 @@ wez.on("update-status", function(window, pane)
 	table.remove(right_cells, #right_cells)
 	table.insert(right_cells, { Text = string.rep(" ", options.padding.right) })
 
-	window:set_right_status(wez.format(right_cells))
+	window:set_right_status(wezterm.format(right_cells))
 end)
 
 return M

@@ -11,10 +11,6 @@ local M = {}
 ---@field right_icon string
 ---@field field_icon string
 
----@class option.tabs
----@field active_tab_fg number
----@field inactive_tab_fg number
-
 ---@class option.module
 ---@field enabled boolean
 ---@field icon string
@@ -24,7 +20,6 @@ local M = {}
 ---@field format string
 
 ---@class option.modules
----@field tabs option.tabs
 ---@field workspace option.module
 ---@field leader option.module
 ---@field pane option.module
@@ -64,11 +59,6 @@ M.options = {
 		field_icon = wez.nerdfonts.indent_line,
 	},
 	modules = {
-		tabs = {
-			active_tab_fg = 4,
-			inactive_tab_fg = 6,
-			new_tab_fg = 2,
-		},
 		workspace = {
 			enabled = true,
 			icon = wez.nerdfonts.cod_window,
