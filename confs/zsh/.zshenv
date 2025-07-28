@@ -23,7 +23,6 @@ export GIT_LOG_STYLE=$GIT_LOG_STYLE_COMPLEX
 
 # Default FZF options
 # Colors from https://github.com/catppuccin/fzf
-export FZF_DEFAULT_COMMAND='ag --hidden --files-with-matches --pager "less -R" --filename-pattern ""'
 export FZF_DEFAULT_OPTS=" \
 --layout=reverse \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \

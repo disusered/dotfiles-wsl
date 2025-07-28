@@ -117,35 +117,6 @@ else
   log "Google Chrome is already installed"
 fi
 
-# Configure symlinks to configs
-log "Symlinking dotfiles with Stow"
-# TODO: git, btop, ncdu, pip
-stow -d $HOME/.dotfiles/confs -t $HOME -R neovim zsh bat aider lazygit editline wezterm starship
-
-# Symlink Windows directories
-log "Symlinking Windows directories"
-if [ -d "/mnt/c/Users/carlo/OneDrive/Desktop/" ]; then
-  if [ ! -e "$HOME/Desktop" ]; then
-    log "Symlinking Windows Desktop"
-    ln -s "/mnt/c/Users/carlo/OneDrive/Desktop/" "$HOME/Desktop"
-  else
-    log "Desktop symlink/directory already exists, skipping."
-  fi
-else
-  log "Windows Desktop not found, skipping symlink."
-fi
-
-if [ -d "/mnt/c/Users/carlo/Downloads" ]; then
-  if [ ! -e "$HOME/Downloads" ]; then
-    log "Symlinking Windows Downloads"
-    ln -s "/mnt/c/Users/carlo/Downloads" "$HOME/Downloads"
-  else
-    log "Downloads symlink/directory already exists, skipping."
-  fi
-else
-  log "Windows Downloads not found, skipping symlink."
-fi
-
 # Set up bat theme cache
 batcat cache --build
 
@@ -189,3 +160,16 @@ if ! command -v zoxide &>/dev/null; then
 else
   log "Zoxide is already installed"
 fi
+
+# FZF
+if ! command -v fzf &>/dev/null; then
+  log "Installing FZF"
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+else
+  log "FZF is already installed"
+fi
+
+# Configure symlinks to configs
+log "Symlinking dotfiles with Stow"
+stow -d $HOME/.dotfiles/confs -t $HOME -R neovim zsh bat aider lazygit editline wezterm starship

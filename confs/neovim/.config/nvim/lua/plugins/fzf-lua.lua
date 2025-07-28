@@ -32,8 +32,10 @@ return {
       -- keymap to grep for grepping the name under the cursor
       "!",
       function()
-        return require("fzf-lua").grep_cword()
+        -- FIXME: Show hidden files but not gitignored files
+        return require("fzf-lua").grep_cword({ hidden = false })
       end,
+      mode = { "n", "x" },
       desc = "Find in files",
     },
   },

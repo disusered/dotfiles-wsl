@@ -3,6 +3,8 @@
     /snap/bin
     # Node version management
     $VOLTA_HOME/bin
+    # FZF
+    $HOME/.fzf/bin
     # Local paths
     $home/.local/bin
     # Inherit PATH

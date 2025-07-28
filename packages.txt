@@ -8,7 +8,6 @@ ripgrep
 lua5.4
 7zip
 unzip
-fzf
 luarocks
 fd-find
 libgit2-dev
@@ -33,3 +32,6 @@ postgresql-client
 wslu
 graphviz
 eza
+ffmpeg
+jq
+poppler-utils
