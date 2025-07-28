@@ -77,18 +77,10 @@ fi
 
 # Rust
 if ! command -v cargo &>/dev/null; then
-  log "Installing Rust and Tree-sitter CLI 🦀"
+  log "Installing Rust"
   curl https://sh.rustup.rs -sSf | sh -s -- -y
 else
   log "Rust is already installed."
-fi
-
-# Git-Delta
-if ! command -v delta &>/dev/null; then
-  log "Installing Git-Delta"
-  cargo install git-delta
-else
-  log "Git-Delta is already installed"
 fi
 
 # Deno
@@ -165,4 +157,27 @@ fi
 
 # Neovim dependencies
 source "$HOME/.cargo/env"
-cargo install --locked tree-sitter-cli
+
+# Tree-sitter CLI
+if ! command -v tree-sitter &>/dev/null; then
+  log "Installing Tree-sitter CLI"
+  cargo install --locked tree-sitter-cli
+else
+  log "Tree-sitter CLI is already installed"
+fi
+
+# Git-Delta
+if ! command -v delta &>/dev/null; then
+  log "Installing Git-Delta"
+  cargo install git-delta
+else
+  log "Git-Delta is already installed"
+fi
+
+# Just
+if ! command -v just &>/dev/null; then
+  log "Installing Just"
+  cargo install just
+else
+  log "Just is already installed"
+fi

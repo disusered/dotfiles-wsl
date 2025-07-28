@@ -50,13 +50,11 @@
 - [x] Wezterm quick select https://wezterm.org/quickselect.html
 - [x] Wezterm customize tab bar https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#tab-bar
 - [x] Wezterm workspaces https://wezterm.org/recipes/workspaces.html
-- [ ] Wezterm sessions https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#session
 - [ ] Yazi over ranger https://yazi-rs.github.io/docs/installation
 - [ ] Wezterm Eza hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements
 - [ ] Wezterm Delta hyperlinks https://dandavison.github.io/delta/hyperlinks.html
-- [ ] Wezterm hyperlinks to Jira/GitHub issues
-- [ ] Wezterm launch menu https://wezterm.org/config/launch.html#the-launcher-menu
 - [ ] Dragon https://github.com/mwh/dragon
+- [ ] Wezterm launch menu https://wezterm.org/config/launch.html#the-launcher-menu
 - [ ] Use justfile for dotfile actions https://github.com/casey/just
 - [ ] Starship indicate inside container
 - [ ] Starship give Docker context
@@ -69,6 +67,8 @@
 - [ ] Neovim symbol position under tabline Foo > Bar
 
 **Difficult**:
+- [ ] Wezterm sessions https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#session
+- [ ] Wezterm hyperlinks to Jira/GitHub issues
 - [ ] Dim inactive panes in Wezterm & Neovim
 
 - Document scoop packages
@@ -76,6 +76,7 @@
   - win32yank
   - dual-monitor-tools
 
+**Documentation**:
 - Document Wezterm windows setup
  - Elevated Powershell
 
@@ -86,3 +87,7 @@
   cmd /c mklink "C:\Users\carlo\.wezterm.lua" "\\wsl`$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.wezterm.lua"
   symbolic link created for C:\Users\carlo\.wezterm.lua <<===>> \\wsl$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.wezterm.lua
   ```
+
+cd ~/.dotfiles
+git submodule add https://github.com/danielcopper/wezterm-session-manager.git confs/wezterm/.config/wezterm/wezterm-session-manager
+  ``
