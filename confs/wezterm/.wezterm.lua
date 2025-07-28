@@ -6,6 +6,7 @@ local fonts = require("fonts")
 local tabbar = require("tabbar")
 local tmux = require("tmux")
 local keys = require("keys")
+local sessions = require("sessions")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -16,6 +17,7 @@ tmux.apply_to_config(config)
 fonts.apply_to_config(config)
 tabbar.apply_to_config(config)
 keys.apply_to_config(config)
+sessions.apply_to_config(config)
 
 -- Finally, return the configuration to wezterm:
 return config

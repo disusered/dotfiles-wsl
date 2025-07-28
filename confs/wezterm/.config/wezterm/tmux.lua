@@ -220,7 +220,6 @@ function M.apply_to_config(config, _)
 
 		-- Workspaces
 		{ key = "$", mods = "LEADER|SHIFT", action = M.action.RenameWorkspace },
-		{ key = " ", mods = "LEADER", action = M.action.WorkspaceSelect },
 
 		-- Vertical/Horizontal split
 		{
@@ -247,7 +246,7 @@ function M.apply_to_config(config, _)
 		{ key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 
 		-- Quick Select URLs and files
-		{ key = "s", mods = "LEADER|CTRL", action = act.QuickSelect },
+		{ key = " ", mods = "LEADER", action = act.QuickSelect },
 
 		-- Copy Mode
 		{ key = "[", mods = "LEADER", action = act.ActivateCopyMode },
