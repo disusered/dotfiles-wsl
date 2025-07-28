@@ -15,7 +15,22 @@ local config = wezterm.config_builder()
 init.apply_to_config(config)
 tmux.apply_to_config(config)
 fonts.apply_to_config(config)
-tabbar.apply_to_config(config)
+tabbar.apply_to_config(config, {
+	modules = {
+		-- Change the leader icon
+		leader = { icon = wezterm.nerdfonts.cod_diff_modified },
+		-- Shown when the pane is zoomed
+		zoom = { enabled = true },
+		-- Disable pane information
+		pane = { enabled = false },
+		-- I don't need to know the current user
+		username = { enabled = false },
+		-- I don't need to know the current hostname
+		hostname = { enabled = false },
+		-- We already have a clock in the prompt and neovim
+		clock = { enabled = false },
+	},
+})
 keys.apply_to_config(config)
 sessions.apply_to_config(config)
 

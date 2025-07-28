@@ -1,7 +1,7 @@
 local wez = require("wezterm")
 
 ---@private
----@class bar.utilities
+---@class utilities
 local H = {}
 
 ---@type string
@@ -51,49 +51,30 @@ H._space = function(s, space, trailing_space)
 	return spaces .. s .. trailing_spaces
 end
 
--- local helper to check if a table is a list
-local function is_list(t)
-	if type(t) ~= "table" then
-		return false
-	end
-	local count = 0
-	for _ in pairs(t) do
-		count = count + 1
-	end
-	return #t == count
+---trim string from trailing spaces and newlines
+---@param s string
+---@return string
+H._trim = function(s)
+	return s:match("^%s*(.-)%s*$")
 end
 
---- Performs a deep merge of `src` into `dest`.
---- It recursively merges map-like tables.
---- NOTE: This function has specific behavior for lists. If both `dest` and `src` are
---- considered lists (no string keys), it will concatenate them. However, this can
---- lead to unexpected deep-merging of list elements if one of them is not a pure list.
---- For simple list concatenation, prefer using `H.concat`.
---- Use `H.merge` for deeply nested configuration tables where you want to merge values.
----
---- @param dest table The destination table, which will be modified.
---- @param src table The source table.
---- @return table The modified destination table.
-function H.merge(dest, src)
-	if is_list(dest) and is_list(src) then
-		for _, v in ipairs(src) do
-			table.insert(dest, v)
-		end
-		return dest
-	end
-
-	-- Otherwise, deep merge them as maps
-	for k, v in pairs(src) do
-		if type(v) == "table" and not is_list(v) then
-			if type(dest[k]) ~= "table" or is_list(dest[k]) then
-				dest[k] = {} -- Create a new map if one doesn't exist or is a list
+---merges two tables
+---@param t1 table
+---@param t2 table
+---@return table
+function H._merge(t1, t2)
+	for k, v in pairs(t2) do
+		if type(v) == "table" then
+			if type(t1[k] or false) == "table" then
+				H._merge(t1[k] or {}, t2[k] or {})
+			else
+				t1[k] = v
 			end
-			H.merge(dest[k], v)
 		else
-			dest[k] = v
+			t1[k] = v
 		end
 	end
-	return dest
+	return t1
 end
 
 --- Concatenates multiple lists into a single new list.
@@ -103,7 +84,7 @@ end
 ---
 --- @param ... any number of list-like tables to concatenate.
 --- @return table A new table containing all elements from the provided lists.
-function H.concat(...)
+function H._concat(...)
 	local new_list = {}
 	for i = 1, select("#", ...) do
 		local list = select(i, ...)
@@ -114,6 +95,17 @@ function H.concat(...)
 		end
 	end
 	return new_list
+end
+
+---return string with spacing adjusted to prev string
+---@param prev string
+---@param next string
+---@return string
+H._constant_width = function(prev, next)
+	local spacing = #prev - #next
+	local first_half = math.floor(spacing / 2)
+	local second_half = math.ceil(spacing / 2)
+	return H._space(next, first_half, second_half)
 end
 
 return H

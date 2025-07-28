@@ -67,7 +67,7 @@ function module.apply_to_config(config)
 	}
 
 	-- Merge the provided keys with the existing ones in the config
-	config.keys = require("utilities").concat(config.keys, keys)
+	config.keys = require("utilities")._concat(config.keys, keys)
 
 	return config
 end
