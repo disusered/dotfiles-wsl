@@ -66,16 +66,8 @@ function module.apply_to_config(config)
 		},
 	}
 
-	-- Merge the new keys into the existing config keys
-	-- First check if config.keys exists, if not, initialize it
-	if not config.keys then
-		config.keys = {}
-	end
-
-	-- Then insert the new keys into the config.keys table
-	for _, key in ipairs(keys) do
-		table.insert(config.keys, key)
-	end
+	-- Merge the provided keys with the existing ones in the config
+	config.keys = require("utilities").concat(config.keys, keys)
 
 	return config
 end
