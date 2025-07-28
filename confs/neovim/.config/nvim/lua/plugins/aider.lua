@@ -3,6 +3,7 @@ return {
   cmd = "Aider",
   -- Example key mappings for common actions:
   keys = {
+    { "<leader>aa", "<cmd>Aider toggle<cr>", desc = "Aider" },
     { "<leader>a/", "<cmd>Aider toggle<cr>", desc = "Toggle Aider" },
     { "<leader>as", "<cmd>Aider send<cr>", desc = "Send to Aider", mode = { "n", "v" } },
     { "<leader>ac", "<cmd>Aider command<cr>", desc = "Aider Commands" },
