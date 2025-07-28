@@ -50,26 +50,26 @@
 - [x] Wezterm quick select https://wezterm.org/quickselect.html
 - [x] Wezterm customize tab bar https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#tab-bar
 - [x] Wezterm workspaces https://wezterm.org/recipes/workspaces.html
-- [ ] Yazi over ranger https://yazi-rs.github.io/docs/installation
-- [ ] Wezterm Eza hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements
-- [ ] Wezterm Delta hyperlinks https://dandavison.github.io/delta/hyperlinks.html
-- [ ] Dragon https://github.com/mwh/dragon
-- [ ] Wezterm launch menu https://wezterm.org/config/launch.html#the-launcher-menu
-- [ ] Use justfile for dotfile actions https://github.com/casey/just
+- [x] Neovim number/icon column same background as default background
 - [ ] Starship indicate inside container
 - [ ] Starship give Docker context
 - [ ] Starship show sudo status
 - [ ] Eza completion https://eza.rocks/
 - [ ] Neovim show selection stats (lines, words, characters) in statusline
+- [ ] Neovim hide unnecessary info from statusline
 - [ ] Neovim wrap sidebar icon like screenshot
-- [ ] Neovim number/icon column same background as default background
 - [ ] Neovim Markdown outline sidebar
 - [ ] Neovim symbol position under tabline Foo > Bar
+- [ ] Wezterm Eza hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements
+- [ ] Wezterm Delta hyperlinks https://dandavison.github.io/delta/hyperlinks.html
+- [ ] Dragon https://github.com/mwh/dragon
+- [ ] Wezterm launch menu https://wezterm.org/config/launch.html#the-launcher-menu
 
 **Difficult**:
 - [ ] Wezterm sessions https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#session
 - [ ] Wezterm hyperlinks to Jira/GitHub issues
 - [ ] Dim inactive panes in Wezterm & Neovim
+- [ ] Use Justfile for dotfile bootstrap
 
 - Document scoop packages
   - Nuget
@@ -91,3 +91,6 @@
 cd ~/.dotfiles
 git submodule add https://github.com/danielcopper/wezterm-session-manager.git confs/wezterm/.config/wezterm/wezterm-session-manager
   ``
+
+**Etc**:
+- Wezterm config debug: https://github.com/wezterm/wezterm/discussions/6348
