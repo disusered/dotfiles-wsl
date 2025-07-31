@@ -51,19 +51,24 @@
 - [x] Wezterm customize tab bar https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#tab-bar
 - [x] Wezterm workspaces https://wezterm.org/recipes/workspaces.html
 - [x] Neovim number/icon column same background as default background
-- [ ] Starship indicate inside container
-- [ ] Starship give Docker context
-- [ ] Starship show sudo status
-- [ ] Eza completion https://eza.rocks/
+- [x] Neovim symbol position under tabline Foo > Bar
+- [ ] Wezterm Delta hyperlinks https://dandavison.github.io/delta/hyperlinks.html
+- [ ] Wezterm Eza hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements
 - [ ] Neovim show selection stats (lines, words, characters) in statusline
 - [ ] Neovim hide unnecessary info from statusline
 - [ ] Neovim wrap sidebar icon like screenshot
 - [ ] Neovim Markdown outline sidebar
-- [ ] Neovim symbol position under tabline Foo > Bar
-- [ ] Wezterm Eza hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements
-- [ ] Wezterm Delta hyperlinks https://dandavison.github.io/delta/hyperlinks.html
 - [ ] Dragon https://github.com/mwh/dragon
 - [ ] Wezterm launch menu https://wezterm.org/config/launch.html#the-launcher-menu
+- [ ] Starship indicate inside container
+- [ ] Starship give Docker context
+- [ ] Starship show sudo status
+- [ ] Eza completion https://eza.rocks/
+- [ ] Ranger CatppuccinMocha
+- [ ] Ranger image preview
+- [ ] Ranger delta integration
+- [ ] Ranger nvim integration
+- [ ] Ranger bat integration
 
 **Difficult**:
 - [ ] Wezterm sessions https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#session
@@ -75,6 +80,25 @@
   - Nuget
   - win32yank
   - dual-monitor-tools
+
+- Document winget packages
+  - Install
+    - 7zip.7zip
+    - Docker.DockerDesktop
+    - SourceFoundry.HackFonts
+    - Zoom.Zoom
+    - Logitech.GHub
+    - Google.Chrome
+    - Google.GoogleDrive
+    - RevoUninstaller.RevoUninstaller
+    - wez.wezterm
+    - AgileBits.1Password
+    - AgileBits.1Password.CLI
+    - Microsoft.Teams
+    - Meld.Meld
+  - Uninstall
+    - Microsoft.OneDrive
+    - Microsoft.Edge
 
 **Documentation**:
 - Document Wezterm windows setup
