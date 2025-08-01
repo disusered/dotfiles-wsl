@@ -176,18 +176,6 @@ wezterm.on("update-status", function(window, pane)
 
 	local callbacks = {
 		{
-			name = "username",
-			func = function()
-				return user.username
-			end,
-		},
-		{
-			name = "hostname",
-			func = function()
-				return wezterm.hostname()
-			end,
-		},
-		{
 			name = "clock",
 			func = function()
 				return wezterm.time.now():format(options.modules.clock.format)
@@ -197,6 +185,18 @@ wezterm.on("update-status", function(window, pane)
 			name = "cwd",
 			func = function()
 				return paths.get_cwd(pane, true)
+			end,
+		},
+		{
+			name = "hostname",
+			func = function()
+				return wezterm.hostname()
+			end,
+		},
+		{
+			name = "username",
+			func = function()
+				return user.username
 			end,
 		},
 	}

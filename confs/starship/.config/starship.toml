@@ -7,7 +7,6 @@ palette = "catppuccin_mocha"
 # Pure preset
 format = """
 $username\
-$hostname\
 $directory\
 $git_branch\
 $git_metrics\
