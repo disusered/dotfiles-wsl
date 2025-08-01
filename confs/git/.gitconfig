@@ -58,9 +58,16 @@
 	trustExitCode = true
 [pull]
 	rebase = true
+[diff]
+	tool = meld
+[difftool "meld"]
+	cmd = meld.exe "$LOCAL" "$REMOTE"
 [merge]
   conflictstyle = zdiff3
-	tool = nvimdiff
+	tool = meld
+[mergetool "meld"]
+	cmd = meld.exe --auto-merge "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+	trustExitCode = true
 [interactive]
   diffFilter = delta --color-only
 [delta]
