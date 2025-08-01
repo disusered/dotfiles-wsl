@@ -24,6 +24,17 @@ function module.apply_to_config(config)
 		},
 	}
 
+	config.ssh_domains = {
+		{
+			name = "SSH:Ubuntu",
+			remote_address = "127.0.0.1",
+			username = "carlos",
+			connect_automatically = true,
+			multiplexing = "None",
+			assume_shell = "Posix",
+		},
+	}
+
 	-- Default domain is WSL Ubuntu
 	config.default_domain = "WSL:Ubuntu"
 end
