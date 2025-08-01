@@ -54,6 +54,7 @@
 - [x] Neovim symbol position under tabline Foo > Bar
 - [ ] Wezterm Delta hyperlinks https://dandavison.github.io/delta/hyperlinks.html
 - [ ] Wezterm Eza hyperlinks https://wezterm.org/recipes/hyperlinks.html#requirements
+- [ ] xdgopen -> wslview or wsl-open https://github.com/4U6U57/wsl-open
 - [ ] Neovim show selection stats (lines, words, characters) in statusline
 - [ ] Neovim hide unnecessary info from statusline
 - [ ] Neovim wrap sidebar icon like screenshot
@@ -64,11 +65,7 @@
 - [ ] Starship give Docker context
 - [ ] Starship show sudo status
 - [ ] Eza completion https://eza.rocks/
-- [ ] Ranger CatppuccinMocha
-- [ ] Ranger image preview
-- [ ] Ranger delta integration
-- [ ] Ranger nvim integration
-- [ ] Ranger bat integration
+- [ ] Clean up zshfuns
 
 **Difficult**:
 - [ ] Wezterm sessions https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#session
