@@ -27,6 +27,11 @@ return {
       "swift",
       "terraform",
       "norg",
+      "html",
+      "latex",
+      "markdown",
+      "markdown_inline",
+      "typst",
     })
   end,
 }
