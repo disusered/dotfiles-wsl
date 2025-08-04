@@ -89,16 +89,16 @@ M.options = {
 			icon = wez.nerdfonts.cod_server,
 			color = 8,
 		},
+		cwd = {
+			enabled = true,
+			icon = wez.nerdfonts.oct_file_directory,
+			color = 7,
+		},
 		clock = {
 			enabled = true,
 			icon = wez.nerdfonts.md_calendar_clock,
 			format = "%H:%M",
 			color = 5,
-		},
-		cwd = {
-			enabled = true,
-			icon = wez.nerdfonts.oct_file_directory,
-			color = 7,
 		},
 	},
 }

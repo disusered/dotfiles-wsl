@@ -27,8 +27,8 @@ tabbar.apply_to_config(config, {
 		pane = { enabled = false },
 		-- I don't need to know the current user
 		username = { enabled = false },
-		-- We already have a clock in the prompt and neovim
-		clock = { enabled = false },
+		-- I don't need to know the current hostname
+		hostname = { enabled = false },
 	},
 })
 
