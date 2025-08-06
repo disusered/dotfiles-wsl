@@ -17,6 +17,8 @@ return {
         require("neotest-python"),
         -- Ruby
         require("neotest-rspec"),
+        -- Csharp
+        require("neotest-dotnet"),
       })
       require("neotest").setup(opts)
     end,
