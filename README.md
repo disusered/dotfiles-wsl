@@ -41,6 +41,12 @@
 
 ## TODO
 
+## Bugs
+
+- [ ] Always open fzf file search in cwd not file directory
+- [ ] - key in mini.files should go up a parent directory
+- [ ] enter key in mini.files should open file in current window
+
 ## Easy/Medium
 
 - [x] Wezterm basic setup
@@ -57,17 +63,16 @@
 - [x] Wezterm workspaces <https://wezterm.org/recipes/workspaces.html>
 - [x] Neovim number/icon column same background as default background
 - [x] Neovim symbol position under tabline Foo > Bar
+- [x] Neovim hide unnecessary info from statusline
+- [x] Current indentation line only
+- [ ] Starship show sudo status
+- [ ] Neovim show selection stats (lines, words, characters) in statusline
 - [ ] Wezterm Delta hyperlinks <https://dandavison.github.io/delta/hyperlinks.html>
 - [ ] Wezterm Eza hyperlinks <https://wezterm.org/recipes/hyperlinks.html#requirements>
-- [ ] Neovim show selection stats (lines, words, characters) in statusline
-- [ ] Neovim hide unnecessary info from statusline
-- [ ] Neovim wrap sidebar icon like screenshot
 - [ ] Neovim Markdown outline sidebar
-- [ ] Dragon <https://github.com/mwh/dragon>
 - [ ] Wezterm launch menu <https://wezterm.org/config/launch.html#the-launcher-menu>
 - [ ] Starship indicate inside container
 - [ ] Starship give Docker context
-- [ ] Starship show sudo status
 - [ ] Eza completion <https://eza.rocks/>
 - [ ] Clean up zshfuns
 
@@ -76,6 +81,7 @@
 - [ ] Wezterm sessions <https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#session>
 - [ ] Wezterm hyperlinks to Jira/GitHub issues
 - [ ] xdgopen -> wslview or wsl-open <https://github.com/4U6U57/wsl-open>
+- [ ] Neovim wrap sidebar icon like screenshot
 
 - Document scoop packages
   - Nuget
@@ -106,12 +112,12 @@
 - Document Wezterm windows setup
 - Elevated Powershell
 
+  ```powershell
   cmd /c mklink /D "C:\Users\carlo\.config\wezterm" "\\wsl`$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.config\wezterm"
   symbolic link created for C:\Users\carlo\.config\wezterm <<===>> \\wsl$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.config\wezterm
 
   cmd /c mklink "C:\Users\carlo\.wezterm.lua" "\\wsl`$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.wezterm.lua"
   symbolic link created for C:\Users\carlo\.wezterm.lua <<===>> \\wsl$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.wezterm.lua
-
   ```
 
 ## Etc

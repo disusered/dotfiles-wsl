@@ -2,10 +2,7 @@ return {
   "folke/snacks.nvim",
   opts = {
     dashboard = { enabled = false },
-    indent = { -- replaced indent-blankline.nvim
-      enabled = true,
-      only_scope = true,
-    },
+    indent = { enabled = false }, -- replaced by mini.indentscope
     input = { enabled = true }, -- replaced dressing.nvim
     notifier = { enabled = true }, -- replaced nvim-notify
     scope = { enabled = true }, -- ii/ai objects for scope
