@@ -59,7 +59,6 @@
 - [x] Neovim symbol position under tabline Foo > Bar
 - [ ] Wezterm Delta hyperlinks <https://dandavison.github.io/delta/hyperlinks.html>
 - [ ] Wezterm Eza hyperlinks <https://wezterm.org/recipes/hyperlinks.html#requirements>
-- [ ] xdgopen -> wslview or wsl-open <https://github.com/4U6U57/wsl-open>
 - [ ] Neovim show selection stats (lines, words, characters) in statusline
 - [ ] Neovim hide unnecessary info from statusline
 - [ ] Neovim wrap sidebar icon like screenshot
@@ -76,8 +75,7 @@
 
 - [ ] Wezterm sessions <https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#session>
 - [ ] Wezterm hyperlinks to Jira/GitHub issues
-- [ ] Dim inactive panes in Wezterm & Neovim
-- [ ] Use Justfile for dotfile bootstrap
+- [ ] xdgopen -> wslview or wsl-open <https://github.com/4U6U57/wsl-open>
 
 - Document scoop packages
   - Nuget
@@ -108,12 +106,12 @@
 - Document Wezterm windows setup
 - Elevated Powershell
 
-  ```powershell
   cmd /c mklink /D "C:\Users\carlo\.config\wezterm" "\\wsl`$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.config\wezterm"
   symbolic link created for C:\Users\carlo\.config\wezterm <<===>> \\wsl$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.config\wezterm
 
   cmd /c mklink "C:\Users\carlo\.wezterm.lua" "\\wsl`$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.wezterm.lua"
   symbolic link created for C:\Users\carlo\.wezterm.lua <<===>> \\wsl$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.wezterm.lua
+
   ```
 
 ## Etc
