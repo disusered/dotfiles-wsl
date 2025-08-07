@@ -64,6 +64,12 @@ function module.apply_to_config(config)
 				end),
 			}),
 		},
+		-- Open the launcher
+		{
+			key = "P",
+			mods = "CTRL|SHIFT",
+			action = act.ShowLauncher,
+		},
 	}
 
 	-- Merge the provided keys with the existing ones in the config
