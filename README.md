@@ -65,6 +65,8 @@
 - [x] Neovim symbol position under tabline Foo > Bar
 - [x] Neovim hide unnecessary info from statusline
 - [x] Current indentation line only
+- [ ] Csharpier
+- [ ] Omnisharp
 - [ ] Starship show sudo status
 - [ ] Neovim show selection stats (lines, words, characters) in statusline
 - [ ] Wezterm Delta hyperlinks <https://dandavison.github.io/delta/hyperlinks.html>

@@ -5,6 +5,8 @@
     $VOLTA_HOME/bin
     # FZF
     $HOME/.fzf/bin
+    # Csharp
+    $HOME/.dotnet/tools
     # Local paths
     $home/.local/bin
     # Inherit PATH
