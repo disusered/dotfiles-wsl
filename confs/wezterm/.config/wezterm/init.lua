@@ -15,6 +15,9 @@ function module.apply_to_config(config)
 		bottom = 0,
 	}
 
+	-- Spawn a fish shell in login mode
+	config.default_prog = { "/usr/bin/zsh" }
+
 	-- Set the WSL domains
 	config.wsl_domains = {
 		{
@@ -37,6 +40,13 @@ function module.apply_to_config(config)
 
 	-- Default domain is WSL Ubuntu
 	config.default_domain = "WSL:Ubuntu"
+
+	config.launch_menu = {
+		{
+			label = "CRI SSH (Staging)",
+			args = { "ssh", "ser_stage" },
+		},
+	}
 end
 
 return module

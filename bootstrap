@@ -173,4 +173,4 @@ fi
 
 # Configure symlinks to configs
 log "Symlinking dotfiles with Stow"
-stow -d $HOME/.dotfiles/confs -t $HOME -R neovim zsh bat aider lazygit editline wezterm starship git
+stow -d $HOME/.dotfiles/confs -t $HOME -R neovim zsh bat aider lazygit editline wezterm starship git ssh

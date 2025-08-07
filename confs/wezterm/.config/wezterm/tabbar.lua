@@ -142,7 +142,7 @@ wezterm.on("update-status", function(window, pane)
 		table.insert(left_cells, { Text = stat })
 	end
 
-	if options.modules.zoom.enabled then
+	if options.modules.zoom.enabled and pane then
 		local panes_with_info = pane:tab():panes_with_info()
 		for _, p in ipairs(panes_with_info) do
 			if p.is_active and p.is_zoomed then
@@ -155,7 +155,7 @@ wezterm.on("update-status", function(window, pane)
 		end
 	end
 
-	if options.modules.pane.enabled then
+	if options.modules.pane.enabled and pane then
 		local process = pane:get_foreground_process_name()
 		if not process then
 			goto set_left_status
@@ -204,27 +204,34 @@ wezterm.on("update-status", function(window, pane)
 	for _, callback in ipairs(callbacks) do
 		local name = callback.name
 		local func = callback.func
-		if not options.modules[name].enabled then
-			goto continue
+		-- Get the module's configuration safely
+		local mod_config = options.modules and options.modules[name]
+
+		-- Check if the module is configured and enabled
+		if mod_config and mod_config.enabled then
+			local text = func()
+
+			-- Also check if the function returned any text
+			if text and #text > 0 then
+				table.insert(right_cells, { Foreground = { Color = palette.ansi[mod_config.color] } })
+				table.insert(right_cells, { Text = text })
+				table.insert(right_cells, { Foreground = { Color = palette.brights[1] } })
+				table.insert(right_cells, {
+					Text = utilities._space(options.separator.right_icon, options.separator.space, nil)
+						.. mod_config.icon,
+				})
+				table.insert(
+					right_cells,
+					{ Text = utilities._space(options.separator.field_icon, options.separator.space, nil) }
+				)
+			end
 		end
-		local text = func()
-		if #text > 0 then
-			table.insert(right_cells, { Foreground = { Color = palette.ansi[options.modules[name].color] } })
-			table.insert(right_cells, { Text = text })
-			table.insert(right_cells, { Foreground = { Color = palette.brights[1] } })
-			table.insert(right_cells, {
-				Text = utilities._space(options.separator.right_icon, options.separator.space, nil)
-					.. options.modules[name].icon,
-			})
-			table.insert(
-				right_cells,
-				{ Text = utilities._space(options.separator.field_icon, options.separator.space, nil) }
-			)
-		end
-		::continue::
 	end
-	-- remove trailing separator
-	table.remove(right_cells, #right_cells)
+	-- remove trailing separator if items were added
+	if #right_cells > 1 then
+		table.remove(right_cells)
+	end
+
 	table.insert(right_cells, { Text = string.rep(" ", options.padding.right) })
 
 	window:set_right_status(wezterm.format(right_cells))
