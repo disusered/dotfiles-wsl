@@ -111,7 +111,7 @@
 
 ## Documentation
 
-- Document Wezterm windows setup
+- Document Wezterm windows setup with link
 - Elevated Powershell
 
   ```powershell
@@ -121,6 +121,8 @@
   cmd /c mklink "C:\Users\carlo\.wezterm.lua" "\\wsl`$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.wezterm.lua"
   symbolic link created for C:\Users\carlo\.wezterm.lua <<===>> \\wsl$\Ubuntu\home\carlos\.dotfiles\confs\wezterm\.wezterm.lua
   ```
+
+- Add windows ssh config and link via powershell
 
 ## Etc
 
