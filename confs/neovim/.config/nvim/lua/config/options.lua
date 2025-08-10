@@ -84,7 +84,7 @@ vim.opt.statuscolumn = [[%!v:lua.require'snacks.statuscolumn'.get()]]
 
 -- LSP Server to use for Ruby.
 -- https://www.lazyvim.org/extras/lang/ruby
-vim.g.lazyvim_ruby_lsp = "ruby_lsp"
+vim.g.lazyvim_ruby_lsp = "solargraph"
 vim.g.lazyvim_ruby_formatter = "rubocop"
 
 -- Set clipboard for Windows
@@ -103,6 +103,3 @@ vim.g.clipboard = {
 
 -- Automatically load changes to file
 vim.opt.autoread = true
-
--- Set to "solargraph" to use solargraph instead of "ruby_lsp".
-vim.g.lazyvim_ruby_lsp = "solargraph"
