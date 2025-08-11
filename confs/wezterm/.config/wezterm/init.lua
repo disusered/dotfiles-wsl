@@ -36,18 +36,19 @@ function module.apply_to_config(config)
 		},
 	}
 
-	-- Default domain is WSL Ubuntu
-	config.default_domain = "WSL:Ubuntu"
+	-- Default domain is local (cmd.exe)
+	config.default_domain = "local"
+
+	-- PowerShell 7 by default on Windows
+	config.default_prog = { "pwsh.exe" }
 
 	config.launch_menu = {
 		{
 			label = "CRI SSH (Staging)",
+			domain = { DomainName = "WSL:Ubuntu" },
 			args = { "ssh", "ser_stage" },
 		},
 	}
-
-	-- Spawn a zsh shell in login mode
-	config.default_prog = { "/usr/bin/zsh" }
 
 	if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 		table.insert(config.launch_menu, {

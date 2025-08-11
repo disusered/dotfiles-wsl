@@ -6,6 +6,7 @@ local fonts = require("fonts")
 local tabbar = require("tabbar")
 local tmux = require("tmux")
 local keys = require("keys")
+local workspaces = require("workspaces")
 local sessions = require("sessions")
 
 -- This will hold the configuration.
@@ -16,7 +17,6 @@ init.apply_to_config(config)
 tmux.apply_to_config(config)
 fonts.apply_to_config(config)
 keys.apply_to_config(config)
-sessions.apply_to_config(config)
 tabbar.apply_to_config(config, {
 	modules = {
 		-- Change the leader icon
@@ -31,6 +31,8 @@ tabbar.apply_to_config(config, {
 		hostname = { enabled = false },
 	},
 })
+sessions.apply_to_config(config)
+workspaces.apply_to_config(config)
 
 -- Finally, return the configuration to wezterm:
 return config
