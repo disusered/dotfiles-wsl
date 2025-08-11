@@ -6,6 +6,7 @@ palette = "catppuccin_mocha"
 
 # Pure preset
 format = """
+$shell\
 $username\
 $directory\
 $git_branch\
@@ -40,6 +41,12 @@ $rust\
 $swift\
 $memory_usage\
 $time"""
+
+[shell]
+zsh_indicator = ' '
+powershell_indicator = ' '
+style = 'cyan bold'
+disabled = false
 
 [directory]
 read_only = " 󰌾"
