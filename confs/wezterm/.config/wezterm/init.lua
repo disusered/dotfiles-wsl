@@ -1,4 +1,5 @@
 local module = {}
+local wezterm = require("wezterm")
 
 function module.apply_to_config(config)
 	-- Set the color scheme
@@ -14,9 +15,6 @@ function module.apply_to_config(config)
 		top = 0,
 		bottom = 0,
 	}
-
-	-- Spawn a fish shell in login mode
-	config.default_prog = { "/usr/bin/zsh" }
 
 	-- Set the WSL domains
 	config.wsl_domains = {
@@ -47,6 +45,17 @@ function module.apply_to_config(config)
 			args = { "ssh", "ser_stage" },
 		},
 	}
+
+	-- Spawn a zsh shell in login mode
+	config.default_prog = { "/usr/bin/zsh" }
+
+	if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+		table.insert(config.launch_menu, {
+			label = "PowerShell 7",
+			domain = { DomainName = "local" },
+			args = { "pwsh.exe", "-NoLogo" },
+		})
+	end
 end
 
 return module
