@@ -7,7 +7,7 @@
     $HOME/.fzf/bin
     # Csharp
     $HOME/.dotnet/tools
-    # Local paths
+    # Local paths (UV)
     $home/.local/bin
     # Inherit PATH
     $path

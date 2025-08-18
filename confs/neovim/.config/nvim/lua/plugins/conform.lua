@@ -1,18 +1,25 @@
 return {
   "stevearc/conform.nvim",
+  ---@param opts table
   opts = function(_, opts)
+    -- Ensure the formatters_by_ft table exists before modifying it.
     opts.formatters_by_ft = opts.formatters_by_ft or {}
-    opts.formatters_by_ft["*"] = opts.formatters_by_ft["*"] or {}
-    table.insert(opts.formatters_by_ft["*"], "trim_whitespace")
-    table.insert(opts.formatters_by_ft["*"], "trim_newlines")
 
-    opts.formatters_by_ft["sql"] = opts.formatters_by_ft["sql"] or {}
-    table.insert(opts.formatters_by_ft["sql"], "sqlfluff")
+    -- TODO: See how to add these without overriding extras configs
+    -- Use vim.list_extend to safely add formatters to the global fallback list (*).
+    -- This appends to any existing list or creates a new one.
+    -- opts.formatters_by_ft["*"] =
+    --   vim.list_extend(opts.formatters_by_ft["*"] or {}, { "trim_whitespace", "trim_newlines" })
 
-    opts.formatters_by_ft["cs"] = opts.formatters_by_ft["cs"] or {}
-    table.insert(opts.formatters_by_ft["cs"], "csharpier")
+    -- Add formatters for specific filetypes.
+    opts.formatters_by_ft["sql"] = vim.list_extend(opts.formatters_by_ft["sql"] or {}, { "sqlfluff" })
+    opts.formatters_by_ft["cs"] = vim.list_extend(opts.formatters_by_ft["cs"] or {}, { "csharpier" })
 
+    -- Ensure the formatters definition table exists.
     opts.formatters = opts.formatters or {}
+
+    -- Define a custom 'csharpier' formatter with dynamic command resolution.
+    -- This is necessary to handle different installation methods (standalone vs. dotnet tool).
     opts.formatters["csharpier"] = function()
       local command
       if vim.fn.executable("csharpier") == 1 then

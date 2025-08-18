@@ -7,6 +7,7 @@ return {
   { "olimorris/neotest-rspec" },
   {
     "nvim-neotest/neotest",
+    commit = "52fca671",
     config = function(_, opts)
       vim.list_extend(opts.adapters, {
         -- Javascript
