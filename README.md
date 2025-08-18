@@ -44,8 +44,6 @@
 ## Bugs
 
 - [ ] Always open fzf file search in cwd not file directory
-- [ ] - key in mini.files should go up a parent directory
-- [ ] enter key in mini.files should open file in current window
 
 ## Easy/Medium
 
@@ -65,25 +63,25 @@
 - [x] Neovim symbol position under tabline Foo > Bar
 - [x] Neovim hide unnecessary info from statusline
 - [x] Current indentation line only
-- [ ] Csharpier
-- [ ] Omnisharp
-- [ ] Starship show sudo status
-- [ ] Neovim show selection stats (lines, words, characters) in statusline
-- [ ] Wezterm Delta hyperlinks <https://dandavison.github.io/delta/hyperlinks.html>
-- [ ] Wezterm Eza hyperlinks <https://wezterm.org/recipes/hyperlinks.html#requirements>
+- [x] Csharpier
+- [x] Omnisharp
+- [x] Wezterm Delta hyperlinks <https://dandavison.github.io/delta/hyperlinks.html>
 - [ ] Neovim Markdown outline sidebar
-- [ ] Wezterm launch menu <https://wezterm.org/config/launch.html#the-launcher-menu>
+- [x] Wezterm launch menu <https://wezterm.org/config/launch.html#the-launcher-menu>
 - [ ] Starship indicate inside container
 - [ ] Starship give Docker context
-- [ ] Eza completion <https://eza.rocks/>
-- [ ] Clean up zshfuns
+- [ ] Starship show sudo status
+- [ ] Neovim show selection stats (lines, words, characters) in statusline
 
 ### Difficult
 
 - [ ] Wezterm sessions <https://github.com/michaelbrusegard/awesome-wezterm?tab=readme-ov-file#session>
 - [ ] Wezterm hyperlinks to Jira/GitHub issues
 - [ ] xdgopen -> wslview or wsl-open <https://github.com/4U6U57/wsl-open>
+  - [ ] Wezterm Eza hyperlinks <https://wezterm.org/recipes/hyperlinks.html#requirements>
 - [ ] Neovim wrap sidebar icon like screenshot
+- [ ] Merge configs
+- [ ] Clean up zshfuns
 
 - Document scoop packages
   - Nuget

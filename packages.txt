@@ -35,3 +35,4 @@ eza
 ffmpeg
 jq
 poppler-utils
+gh
