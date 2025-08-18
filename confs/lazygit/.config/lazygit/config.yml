@@ -1,6 +1,13 @@
 os:
   editPreset: "nvim-remote"
 gui:
+  showRandomTip: false
+  disableStartupPopups: true
+  showBottomLine: true
+  showCommandLog: false
+  nerdFontsVersion: "3"
+  showFileIcons: true
+  border: single
   theme:
     activeBorderColor:
       - "#89b4fa"
@@ -28,3 +35,13 @@ git:
   paging:
     colorArg: always
     pager: delta --features lazygit
+keybinding:
+  # Use neovim for writing commit messages by default
+  files:
+    commitChanges: C
+    commitChangesWithEditor: c
+  commits:
+    openLogMenu: <c-g>
+# Do not prompt after git commands
+promptToReturnFromSubprocess: false
+notARepository: "quit"
