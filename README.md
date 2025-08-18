@@ -66,8 +66,8 @@
 - [x] Csharpier
 - [x] Omnisharp
 - [x] Wezterm Delta hyperlinks <https://dandavison.github.io/delta/hyperlinks.html>
-- [ ] Neovim Markdown outline sidebar
 - [x] Wezterm launch menu <https://wezterm.org/config/launch.html#the-launcher-menu>
+- [ ] Neovim Markdown outline sidebar
 - [ ] Starship indicate inside container
 - [ ] Starship give Docker context
 - [ ] Starship show sudo status
@@ -85,14 +85,13 @@
 
 # C #
 
-- [ ] Configure Roslyn <https://github.com/seblyng/roslyn.nvim>
-  - [ ] CodeLens refresh autocmd
-  - [ ] Formatting
-  - [ ] Symbol search
-  - [ ] Targets
-- [ ] Configure Razor
+- [x] Configure Roslyn <https://github.com/seblyng/roslyn.nvim>
+  - [x] CodeLens refresh autocmd
+  - [x] Formatting
+  - [x] Symbol search
+- [x] Configure Razor
 - [ ] Dotnet restore <https://github.com/seblyng/roslyn.nvim/wiki>
-- [ ] AutoInsert <https://github.com/seblyng/roslyn.nvim/wiki>
+- [x] AutoInsert <https://github.com/seblyng/roslyn.nvim/wiki>
 
 - Document scoop packages
   - Nuget
