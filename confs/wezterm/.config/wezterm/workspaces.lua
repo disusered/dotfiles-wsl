@@ -9,9 +9,11 @@ function module.apply_to_config(config)
 	local workspaces = {
 		{ id = "~", label = "Home (WSL)", domain = "WSL:Ubuntu" },
 		{ id = "~/.dotfiles", label = "Dotfiles (WSL)", domain = "WSL:Ubuntu" },
-		{ id = "~/Development/se", label = "CRI", domain = "WSL:Ubuntu" },
+		{ id = "~/Development/se", label = "CRI (WSL)", domain = "WSL:Ubuntu" },
+		{ id = "~/Development/cosmiq", label = "Cosmiq (WSL)", domain = "WSL:Ubuntu" },
 		{ id = win_home .. "/.dotfiles", label = "Dotfiles (Windows)", domain = "local" },
-		{ id = win_home .. "/Documents/Development/Brillai.API", label = "Brillai", domain = "local" },
+		{ id = win_home .. "/Documents/Development/Brillai.API", label = "Brillai (Windows)", domain = "local" },
+		{ id = win_home .. "/Documents/Development/cosmiq", label = "Cosmiq (Windows)", domain = "local" },
 	}
 
 	-- Create a separate list for the InputSelector's choices.
