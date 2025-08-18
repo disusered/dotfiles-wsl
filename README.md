@@ -83,6 +83,17 @@
 - [ ] Merge configs
 - [ ] Clean up zshfuns
 
+# C #
+
+- [ ] Configure Roslyn <https://github.com/seblyng/roslyn.nvim>
+  - [ ] CodeLens refresh autocmd
+  - [ ] Formatting
+  - [ ] Symbol search
+  - [ ] Targets
+- [ ] Configure Razor
+- [ ] Dotnet restore <https://github.com/seblyng/roslyn.nvim/wiki>
+- [ ] AutoInsert <https://github.com/seblyng/roslyn.nvim/wiki>
+
 - Document scoop packages
   - Nuget
   - win32yank

@@ -4,14 +4,6 @@ return {
     opts.options.component_separators = ""
     opts.options.section_separators = { left = "", right = "" }
 
-    -- Move diagnostics to other section
-    local lualine_z = {
-      LazyVim.lualine.root_dir(),
-      { "filetype", icon_only = true, separator = "", padding = { left = 2, right = 0 } },
-      { LazyVim.lualine.pretty_path() },
-    }
-    vim.tbl_deep_extend("force", opts.sections, { lualine_z = lualine_z })
-
     -- Remove clock
     opts.sections.lualine_z = {}
 
@@ -26,7 +18,7 @@ return {
       opts.sections.lualine_c = new_lualine_c
     end
 
-    -- Remove progress
+    -- Move diagnostics to right side
     local icons = LazyVim.config.icons
     opts.sections.lualine_y = {
       {

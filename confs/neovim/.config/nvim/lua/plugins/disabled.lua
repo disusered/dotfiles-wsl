@@ -10,7 +10,6 @@ return {
   -- disable tokyonight
   { "folke/tokyonight.nvim", enabled = false },
   -- disable UI extras
-  { "folke/noice.nvim", enabled = false },
   { "folke/edgy.nvim", enabled = false },
   -- no file explorer
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },

@@ -6,15 +6,6 @@ return {
         "razor",
       },
     },
-    init = function()
-      -- We add the Razor file types before the plugin loads.
-      vim.filetype.add({
-        extension = {
-          razor = "razor",
-          cshtml = "razor",
-        },
-      })
-    end,
   },
   {
     "williamboman/mason.nvim",
