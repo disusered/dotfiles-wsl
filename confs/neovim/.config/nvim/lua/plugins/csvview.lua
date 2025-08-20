@@ -27,14 +27,28 @@ return {
 
   keys = function()
     local csvview = require("csvview")
-    return {
+    local wk = require("which-key")
+    wk.add({
       {
-        "<leader>C",
+        "<leader>uv",
         function()
-          csvview.toggle()
+          if csvview.is_enabled() then
+            csvview.disable()
+          else
+            csvview.enable()
+          end
         end,
-        desc = "Toggle CSV view",
+        desc = function()
+          return csvview.is_enabled() and "Disable CSV View" or "Enable CSV View"
+        end,
+        icon = function()
+          if csvview.is_enabled() then
+            return { icon = "", color = "green" }
+          else
+            return { icon = "", color = "yellow" }
+          end
+        end,
       },
-    }
+    })
   end,
 }
