@@ -21,3 +21,19 @@ vim.ui.open = function(url, opts)
     original_ui_open(url, opts)
   end
 end
+
+-- Add lua debug helper
+function _G.dump(o)
+  if type(o) == "table" then
+    local s = "{ "
+    for k, v in pairs(o) do
+      if type(k) ~= "number" then
+        k = '"' .. k .. '"'
+      end
+      s = s .. "[" .. k .. "] = " .. dump(v) .. ","
+    end
+    return s .. "} "
+  else
+    return tostring(o)
+  end
+end
