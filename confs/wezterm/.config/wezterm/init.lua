@@ -23,6 +23,10 @@ function module.apply_to_config(config)
 			distribution = "Ubuntu",
 			default_cwd = "/home/carlos",
 		},
+		{
+			name = "WSL:Fedora",
+			distribution = "FedoraLinux-42",
+		},
 	}
 
 	config.ssh_domains = {

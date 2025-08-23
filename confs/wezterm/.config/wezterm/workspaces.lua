@@ -8,6 +8,7 @@ function module.apply_to_config(config)
 
 	local workspaces = {
 		{ id = "~", label = "Home (WSL)", domain = "WSL:Ubuntu" },
+		{ id = "~", label = "Fedora Home (WSL)", domain = "WSL:Fedora" },
 		{ id = "~/.dotfiles", label = "Dotfiles (WSL)", domain = "WSL:Ubuntu" },
 		{ id = "~/Development/se", label = "CRI (WSL)", domain = "WSL:Ubuntu" },
 		{ id = "~/Development/cosmiq", label = "Cosmiq (WSL)", domain = "WSL:Ubuntu" },
